@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-900 text-white">
-    <header class="w-full h-[60px] fixed z-[10] flex items-center">
+    <header class="w-full h-[60px] fixed z-[10] flex items-center bg-slate-900/[0.9]">
         <nav class="w-full max-w-[1200px] mx-auto px-5 flex items-center justify-between">
             <div>
                 <a href="/" class="h-[50px]">
