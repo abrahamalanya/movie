@@ -23,6 +23,11 @@
     </header>
     <main class="">
         <article class="w-full h-[450px] md:h-[700px] flex items-center relative">
+            <section class="w-full h-full absolute top-0 left-0 opacity-25 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""
+                    class="absolute top-0 left-0 object-none object-center"> {{-- w-full h-full --}}
+            </section>
+            <div class="w-full h-[250px] absolute left-0 bottom-0 bg-gradient-to-t from-slate-900"></div>
             <section class="w-full max-w-[1200px] mx-auto px-5">
                 <section class="max-w-[800px] mx-auto flex flex-col items-center text-center relative">
                     <span class="font-black text-[50px] md:text-[90px] mb-[10px] md:mb-0">Welcome</span>
