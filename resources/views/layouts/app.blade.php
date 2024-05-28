@@ -9,7 +9,9 @@
 </head>
 <body class="bg-slate-900 text-white">
     <x-web-header></x-web-header>
-    <x-web-main></x-web-main>
+    <x-web-main>
+        @yield('main')
+    </x-web-main>
     <x-web-footer></x-web-footer>
     <script>
         // Suponiendo que tu contenedor del carrusel tenga el ID 'carouselContainer'

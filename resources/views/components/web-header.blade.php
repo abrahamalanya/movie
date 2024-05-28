@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="flex">
-            <a href="/" class="mx-[15px] text-white font-bold hover:text-red-400">Movie</a>
+            <a href="{{ url('movie') }}" class="mx-[15px] text-white font-bold hover:text-red-400">Movie</a>
             <a href="#" class="mx-[15px] text-white font-bold hover:text-red-400">Tv Shows</a>
         </div>
     </x-web-container>
