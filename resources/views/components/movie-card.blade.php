@@ -6,7 +6,7 @@
                 <span class="text-[1rem] md:text-[1.3rem] font-bold">7.3</span>
             </div>
         </div>
-        <div class="w-full relative flex gap-[5px] flex-wrap justify-end">
+        <div class="w-full relative flex gap-[5px] flex-wrap justify-end left-[-20px] md:left-[5px]">
             <span class="relative flex flex-wrap justify-end bg-red-500 py-[3px] px-[5px] text-xs rounded text-white whitespace-nowrap">Science Fiction</span>
             <span class="relative flex flex-wrap justify-end bg-red-500 py-[3px] px-[5px] text-xs rounded text-white whitespace-nowrap">Action</span>
             <span class="relative flex flex-wrap justify-end bg-red-500 py-[3px] px-[5px] text-xs rounded text-white whitespace-nowrap">Adventure</span>
