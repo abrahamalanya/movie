@@ -6,7 +6,7 @@
 <article class="w-full h-[450px] md:h-[700px] flex items-center relative">
     <x-web-container>
         <section class="max-w-[800px] mx-auto flex flex-col items-center text-center relative">
-            <span class="font-black text-[50px] md:text-[90px] mb-[10px] md:mb-0">Register</span>
+            <span class="font-black text-[50px] md:text-[90px] mb-[10px] md:mb-0">{{ __('messages.register') }}</span>
             <span class="font-medium text-[18px] md:text-[24px] mb-[40px]">
                 Millons of movies , TV shows and people to discover.
                 Explore Now.

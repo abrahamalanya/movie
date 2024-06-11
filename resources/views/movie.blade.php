@@ -11,7 +11,7 @@
         <div class="w-full h-[250px] absolute left-0 bottom-0 bg-gradient-to-t from-slate-900"></div>
         <x-web-container>
             <section class="max-w-[800px] mx-auto flex flex-col items-center text-center relative">
-                <span class="font-black text-[50px] md:text-[90px] mb-[10px] md:mb-0">Welcome</span>
+                <span class="font-black text-[50px] md:text-[90px] mb-[10px] md:mb-0">{{ __('messages.welcome') }}</span>
                 <span class="font-medium text-[18px] md:text-[24px] mb-[40px]">
                     Millons of movies , TV shows and people to discover.
                     Explore Now.
@@ -21,7 +21,7 @@
                         class="w-[calc(100%-100px)] md:w-[calc(100%-150px)] h-[50px] md:h-[60px] bg-white text-black px-[15px] md:px-[30px]
                         rounded-l-[30px] text-[14px] md:text-[20px] outline-none border-none font-medium">
                     <button class="w-[100px] md:w-[150px] h-[50px] md:h-[60px]
-                        rounded-r-[30px] text-[18px] md:text-[20px] outline-none border-none font-medium bg-gradient-to-r from-orange-400 to-red-500">Search</button>
+                        rounded-r-[30px] text-[18px] md:text-[20px] outline-none border-none font-medium bg-gradient-to-r from-orange-400 to-red-500">{{ __('messages.search') }}</button>
                 </section>
             </section>
         </x-web-container>

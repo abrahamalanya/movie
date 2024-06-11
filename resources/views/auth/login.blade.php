@@ -6,7 +6,7 @@
     <article class="w-full h-[450px] md:h-[700px] flex items-center relative">
         <x-web-container>
             <section class="max-w-[800px] mx-auto flex flex-col items-center text-center relative">
-                <span class="font-black text-[50px] md:text-[90px] mb-[10px] md:mb-0">Login</span>
+                <span class="font-black text-[50px] md:text-[90px] mb-[10px] md:mb-0">{{ __('messages.login') }}</span>
                 <span class="font-medium text-[18px] md:text-[24px] mb-[40px]">
                     Millons of movies , TV shows and people to discover.
                     Explore Now.
@@ -19,14 +19,14 @@
     
                     <!-- Email Address -->
                     <div>
-                        <x-input-label for="email" :value="__('Email')" />
+                        <x-input-label for="email" :value="__('messages.email')" />
                         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
     
                     <!-- Password -->
                     <div class="mt-4">
-                        <x-input-label for="password" :value="__('Password')" />
+                        <x-input-label for="password" :value="__('messages.password')" />
     
                         <x-text-input id="password" class="block mt-1 w-full"
                                         type="password"
