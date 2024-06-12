@@ -1,15 +1,11 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-Route::get('/', function () {
-    return view('movie');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 Route::get('/movie', function () {
     return view('movies.index');
