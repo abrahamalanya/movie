@@ -12,4 +12,5 @@ return [
     'series' => 'Series',
     'login' => 'Ingresar',
     'register' => 'Registrarse',
+    'top10' => 'Las 10 Películas',
 ];

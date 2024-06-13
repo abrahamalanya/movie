@@ -24,6 +24,10 @@
         </x-web-container>
     </article>
     <article class="relative mb-[70px]">
+        @php $j = 0; @endphp
+        <x-movie-tape :$j :$moviesTop></x-movie-tape>
+    </article>
+    <article class="relative mb-[70px]">
         <x-web-container class="mb-[50px] relative">
             <section class="w-full flex flex-wrap gap-3 md:gap-5">
                 @foreach ($movies as $item)
@@ -39,9 +43,5 @@
                 {{ $movies->appends(['query' => request('query')])->links() }}
             </section>
         </x-web-container>
-    </article>
-    <article class="relative mb-[70px]">
-        @php $j = 0; @endphp
-        <x-movie-tape :$j :$moviesTop></x-movie-tape>
     </article>
 @endsection

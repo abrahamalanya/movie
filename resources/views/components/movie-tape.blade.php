@@ -1,5 +1,5 @@
 <x-web-container class="flex items-center justify-between mb-5">
-    <span class="text-2xl text-normal font-semibold">Trending</span>
+    <span class="text-2xl text-normal font-semibold">{{ __('messages.top10') }}</span>
 </x-web-container>
 <x-web-container class="mb-[50px] relative">
     <x-movie-tape-navigation class="left-[-4%]" onclick="navigation({{$j}}, 'left')">
