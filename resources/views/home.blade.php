@@ -27,7 +27,7 @@
         <x-web-container class="mb-[50px] relative">
             <section class="w-full flex flex-wrap gap-3 md:gap-5">
                 @foreach ($movies as $item)
-                    <x-movie-card>
+                    <x-movie-card :$item>
                         <x-slot:title>{{ $item->title }}</x-slot>
                         <x-slot:release_date>{{ $item->release_date }}</x-slot>
                         <x-slot:poster>{{ $item->poster }}</x-slot>
@@ -42,6 +42,6 @@
     </article>
     <article class="relative mb-[70px]">
         @php $j = 0; @endphp
-        <x-movie-tape :$j></x-movie-tape>
+        <x-movie-tape :$j :$moviesTop></x-movie-tape>
     </article>
 @endsection

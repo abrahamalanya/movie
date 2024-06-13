@@ -15,6 +15,12 @@
             @yield('main')
         </x-web-main>
         <x-web-footer></x-web-footer>
+        {{-- message status --}}
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <script>
             const navigation = (key, dir) => {
                 const container = document.getElementById('carouselContainer'+key);

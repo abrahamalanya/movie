@@ -12,7 +12,7 @@ class Movie extends Model
     protected $fillable = ['title', 'synopsis', 'release_date', 'poster'];
 
     public function genres() {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Genre::class, 'movie_genre');
     }
 
     public function reviews() {

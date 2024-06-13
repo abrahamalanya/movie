@@ -14,8 +14,12 @@ class HomeController extends Controller
         $movies = Movie::select('movies.*', DB::raw('AVG(reviews.rating) as average_rating'))
             ->leftJoin('reviews', 'movies.id', '=', 'reviews.movie_id')
             ->groupBy('movies.id')
+            ->orderByDesc('id')
             ->paginate(15);
-        return view('home', compact('movies'));
+
+        $moviesTop = Movie::orderByDesc('id')->limit(10)->get();
+
+        return view('home', compact('movies', 'moviesTop'));
     }
 
     public function search(Request $request)
@@ -29,5 +33,10 @@ class HomeController extends Controller
             ->paginate(15);
 
         return view('home', compact('movies'));
+    }
+
+    public function film(Movie $movie)
+    {
+        return view('film', compact('movie'));
     }
 }
