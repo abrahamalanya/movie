@@ -32,28 +32,26 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        $messages = [
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'synopsis' => 'required',
+            'url' => 'required',
+        ], [
             'title.required' => 'El título es obligatorio.',
             'title.string' => 'El título debe ser una cadena de texto.',
             'title.max' => 'El título no puede tener más de 255 caracteres.',
-            'synopsis.required' => 'La sinopsis es obligatoria.',
-            'release_date.required' => 'La fecha de lanzamiento es obligatoria.',
-            'release_date.date' => 'La fecha de lanzamiento debe ser una fecha válida.',
-            'poster.string' => 'El poster debe ser una cadena de texto.',
-            'poster.max' => 'El poster no puede tener más de 255 caracteres.',
-        ];
-        
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'synopsis' => 'required',
-            'release_date' => 'required|date',
-            'poster' => 'nullable|string|max:255',
-        ], $messages);
+            'synopsis.required' => 'La Sinopsis es obligatorio.',
+            'url.required' => 'La Enlace es obligatorio.',
+        ]);
 
-        $movie = Movie::create($validated);
-
+        $movie = Movie::create([
+            'title' => request('title'),
+            'synopsis' => request('synopsis'),
+            'url' => request('url'),
+            'release_date' => now(),
+            'poster' => null,
+        ]);
         $movie->genres()->attach(request('genre'));
-        dd($movie);
 
         return redirect()->route('movie.index')->with('success', 'Movie created successfully.');
     }
