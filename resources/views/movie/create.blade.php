@@ -6,7 +6,7 @@
     <x-web-container class="pt-[100px] flex gap-5 flex-col mb-10">
         <a href="{{ route('movie.index') }}">Regresar</a>
 
-        <form action="{{ route('movie.store') }}" method="POST">
+        <form action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <section class="flex gap-2">
                 <article class="w-1/2">
@@ -52,6 +52,16 @@
                         </x-ui.label>
                         <x-ui.select name="genre" id="genre" :$data />
                         @error('genre')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
+                    {{-- Poster --}}
+                    <div class="mb-4">
+                        <x-ui.label for="poster">
+                            {{ __('Imagen') }}
+                        </x-ui.label>
+                        <x-ui.input type="file" name="poster" id="poster" />
+                        @error('poster')
                             <x-ui.input-error>{{ $message }}</x-ui.input-error>
                         @enderror
                     </div>

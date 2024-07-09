@@ -36,20 +36,29 @@ class MovieController extends Controller
             'title' => 'required|string|max:255',
             'synopsis' => 'required',
             'url' => 'required',
+            'genre' => 'required',
+            'poster' => 'required',
         ], [
             'title.required' => 'El título es obligatorio.',
             'title.string' => 'El título debe ser una cadena de texto.',
             'title.max' => 'El título no puede tener más de 255 caracteres.',
             'synopsis.required' => 'La Sinopsis es obligatorio.',
             'url.required' => 'La Enlace es obligatorio.',
+            'genre.required' => 'La Género es obligatorio.',
+            'poster.required' => 'La Imagen es obligatorio.',
         ]);
+
+        // Guarda la imagen en la carpeta 'movies'
+        if ($request->hasFile('poster')) {
+            $path = $request->file('poster')->store('movies', 'public');
+        }
 
         $movie = Movie::create([
             'title' => request('title'),
             'synopsis' => request('synopsis'),
             'url' => request('url'),
             'release_date' => now(),
-            'poster' => null,
+            'poster' => $path,
         ]);
         $movie->genres()->attach(request('genre'));
 
