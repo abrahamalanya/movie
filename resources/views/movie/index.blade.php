@@ -10,7 +10,7 @@
                 @foreach ($movies as $item)
                     <li class="bg-slate-700 rounded-lg px-4 py-2 flex gap-4">
                         <div class="w-[130px] h-[150px]">
-                            <img src="{{ asset($item->poster) }}" alt="{{ $item->title }}" class="w-full h-full object-cover rounded-xl overflow-hidden">
+                            <img src="{{ asset('storage/'.$item->poster) }}" alt="{{ $item->title }}" class="w-full h-full object-cover rounded-xl overflow-hidden">
                         </div>
                         <div class="w-full flex flex-col justify-start items-start">
                             <a href="{{ route('movie.edit', $item) }}" class="capitalize text-xs md:text-2xl mb-[10px] leading-6 truncate font-semibold">
