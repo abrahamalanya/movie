@@ -31,12 +31,7 @@
         <x-web-container class="mb-[50px] relative">
             <section class="w-full flex flex-wrap gap-3 md:gap-5">
                 @foreach ($movies as $item)
-                    <x-movie-card :$item>
-                        <x-slot:title>{{ $item->title }}</x-slot>
-                        <x-slot:release_date>{{ $item->release_date }}</x-slot>
-                        <x-slot:poster>{{ $item->poster }}</x-slot>
-                        <x-slot:rating>{{ number_format($item->average_rating, 2) }}</x-slot>
-                    </x-movie-card>
+                    <x-movie-card :$item />
                 @endforeach
                 </section>
             <section class="w-full my-10">

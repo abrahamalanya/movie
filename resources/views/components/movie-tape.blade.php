@@ -10,12 +10,7 @@
     </x-movie-tape-navigation>
     <section class="flex gap-3 md:gap-5 -mr-5 -ml-5 px-5 md:m-0 md:p-0 overflow-y-hidden xl:overflow-hidden rounded-2xl relative" id="carouselContainer{{$j}}">
         @foreach ($moviesTop as $item)
-            <x-movie-card :$item>
-                <x-slot:title>{{ $item->title }}</x-slot>
-                <x-slot:release_date>{{ $item->release_date }}</x-slot>
-                <x-slot:poster>{{ $item->poster }}</x-slot>
-                <x-slot:rating>{{ number_format($item->average_rating, 2) }}</x-slot>
-            </x-movie-card>
+            <x-movie-card :$item />
         @endforeach
     </section>
 </x-web-container>

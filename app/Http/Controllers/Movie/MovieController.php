@@ -86,16 +86,23 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        $validated = $request->validate([
+        $request->validate([
             'title' => 'required|string|max:255',
             'synopsis' => 'required',
-            'release_date' => 'required|date',
-            'poster' => 'nullable|string|max:255',
+            'url' => 'required',
+        ], [
+            'title.required' => 'El título es obligatorio.',
+            'title.string' => 'El título debe ser una cadena de texto.',
+            'title.max' => 'El título no puede tener más de 255 caracteres.',
+            'synopsis.required' => 'La Sinopsis es obligatorio.',
+            'url.required' => 'La Enlace es obligatorio.',
         ]);
+        $movie->title = request('title');
+        $movie->synopsis = request('synopsis');
+        $movie->url = request('url');
+        $movie->save();
 
-        $movie->update($validated);
-
-        return redirect()->route('movie.index')->with('success', 'Movie updated successfully.');
+        return redirect()->route('movie.index')->with('success', 'Movie created successfully.');
     }
 
     /**

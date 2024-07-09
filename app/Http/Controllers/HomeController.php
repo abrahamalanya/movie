@@ -10,13 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Obtener películas con su promedio de calificaciones usando una subconsulta
-        $movies = Movie::select('movies.*', DB::raw('AVG(reviews.rating) as average_rating'))
-            ->leftJoin('reviews', 'movies.id', '=', 'reviews.movie_id')
-            ->groupBy('movies.id')
-            ->orderByDesc('id')
-            ->paginate(15);
-
+        $movies = Movie::orderByDesc('id')->paginate(15);
         $moviesTop = Movie::orderByDesc('id')->limit(10)->get();
 
         return view('home', compact('movies', 'moviesTop'));
@@ -25,14 +19,10 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
+        $movies = Movie::where('title', 'like', '%'.$query.'%')->orderByDesc('id')->paginate(15);
+        $moviesTop = Movie::orderByDesc('id')->limit(10)->get();
 
-        $movies = Movie::select('movies.*', DB::raw('AVG(reviews.rating) as average_rating'))
-            ->leftJoin('reviews', 'movies.id', '=', 'reviews.movie_id')
-            ->groupBy('movies.id')
-            ->where('title', 'like', '%'.$query.'%')
-            ->paginate(15);
-
-        return view('home', compact('movies'));
+        return view('home', compact('movies', 'moviesTop'));
     }
 
     public function film(Movie $movie)

@@ -6,52 +6,48 @@
     <x-web-container class="pt-[100px] flex gap-5 flex-col mb-10">
         <a href="{{ route('movie.index') }}">Regresar</a>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        <form action="{{ route('movie.update', $movie) }}" method="POST">
+        <form action="{{ route('movie.update', $movie) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('put')
-            <div class="form-group">
-                <label for="title">Título</label>
-                <input type="text" name="title" id="title" class="form-control text-slate-900" value="{{ $movie->title }}">
-                @error('title')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="synopsis">Sinopsis</label>
-                <textarea name="synopsis" id="synopsis" class="form-control text-slate-900">{{ $movie->synopsis }}</textarea>
-                @error('synopsis')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="release_date">Fecha de Lanzamiento</label>
-                <input type="date" name="release_date" id="release_date" class="form-control text-slate-900" value="{{ $movie->release_date }}">
-                @error('release_date')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="poster">Poster</label>
-                <input type="text" name="poster" id="poster" class="form-control text-slate-900" value="{{ $movie->poster }}">
-                @error('poster')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <button type="submit" class="btn btn-primary">Actualizar</button>
+            <section class="flex gap-2">
+                <article class="w-1/2">
+                    {{-- Titulo --}}
+                    <div class="mb-4">
+                        <x-ui.label for="title">
+                            {{ __('Título') }}
+                        </x-ui.label>
+                        <x-ui.input type="text" name="title" id="title" value="{{ $movie->title }}" />
+                        @error('title')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
+                    {{-- Synopsis --}}
+                    <div>
+                        <x-ui.label for="synopsis">
+                            {{ __('Sinopsis') }}
+                        </x-ui.label>
+                        <x-ui.texarea name="synopsis" id="synopsis" cols="30" rows="10" value="{{ $movie->synopsis }}" />
+                        @error('synopsis')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
+                </article>
+                <article class="w-1/2">
+                    {{-- Url --}}
+                    <div class="mb-4">
+                        <x-ui.label for="url">
+                            {{ __('Enlace') }}
+                        </x-ui.label>
+                        <x-ui.input type="text" name="url" id="url" value="{{ $movie->url }}" />
+                        @error('url')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
+                </article>
+            </section>
+            <x-ui.button type="submit">
+                {{ __('Guardar') }}
+            </x-ui.button>
         </form>
     </x-web-container>
 @endsection

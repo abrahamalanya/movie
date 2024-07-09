@@ -7,8 +7,8 @@
         </div>
         <div class="flex">
             <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.home') }}</a>
-            <a href="{{ url('movie') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a>
-            <a href="{{ url('movie') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a>
+            {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a> --}}
+            {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a> --}}
             @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/dashboard') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">Dashboard</a>
