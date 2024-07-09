@@ -9,8 +9,16 @@ class Movie extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'synopsis',
+        'url',
+        'release_date',
+        'poster'
+    ];
+
     public function genres() {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Genre::class, 'movie_genre');
     }
 
     public function reviews() {

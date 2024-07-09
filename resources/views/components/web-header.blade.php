@@ -6,9 +6,9 @@
             </a>
         </div>
         <div class="flex">
-            <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">Home</a>
-            <a href="{{ url('movie') }}" class="mx-[15px] text-white font-bold hover:text-red-400">Movies</a>
-            <a href="{{ url('movie') }}" class="mx-[15px] text-white font-bold hover:text-red-400">Series</a>
+            <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.home') }}</a>
+            {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a> --}}
+            {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a> --}}
             @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/dashboard') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">Dashboard</a>
@@ -28,6 +28,9 @@
                             </x-slot>
         
                             <x-slot name="content">
+                                <x-dropdown-link :href="route('movie.create')">
+                                    {{ __('Add Movies') }}
+                                </x-dropdown-link>
                                 <x-dropdown-link :href="route('profile.edit')">
                                     {{ __('Profile') }}
                                 </x-dropdown-link>
@@ -46,9 +49,9 @@
                         </x-dropdown>
                     </div>
                 @else
-                    <a href="{{ url('login') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">Login</a>
+                    <a href="{{ url('login') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.login') }}</a>
                     @if (Route::has('register'))
-                        <a href="{{ url('register') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">Register</a>
+                        <a href="{{ url('register') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.register') }}</a>
                     @endif
                 @endauth
             @endif
