@@ -4,7 +4,16 @@
     </div>
 </section> --}}
 <section class="w-full md:w-[800px] md:px-8 shrink-0">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/xLetJpcjHS0?si=ZE9EPeJ585Z092g1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-[600px]"></iframe>
+    @php
+        $origin = request()->getSchemeAndHttpHost();
+    @endphp
+    <div class="plyr__video-embed" id="player">
+        <iframe 
+            src="{{ $movie->url }}?origin={{ $origin }}&iv_load_policy=3&modestbranding=1&rel=0"
+            allowfullscreen
+            allow="autoplay">
+        </iframe>
+    </div>
 </section>
 <section class="flex flex-col justify-between items-start">
     <article>
@@ -54,3 +63,12 @@
         </div> --}}
     </article>
 </section>
+<script>
+    const player = new Plyr('#player', {
+        youtube: {
+            noCookie: true,
+            rel: 0,
+            showinfo: 0
+        }
+    });
+</script>
