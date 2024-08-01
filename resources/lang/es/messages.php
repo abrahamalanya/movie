@@ -13,4 +13,7 @@ return [
     'login' => 'Ingresar',
     'register' => 'Registrarse',
     'top10' => 'Las 10 Películas',
+    'add' => 'Agregar',
+    'delete' => 'Eliminar',
+    'edit' => 'Editar',
 ];
