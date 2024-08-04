@@ -1,7 +1,7 @@
-@extends('layouts.backoffice')
+@extends('layouts.app')
 
 @section('main')
-    <x-backoffice.container>
+    <x-backoffice.container class="pt-[100px] flex gap-5 flex-col mb-10">
         <section class="py-2 flex flex-row justify-between items-center">
             <h2 class="text-2xl font-bold">{{ __('messages.movies') }}</h2>
             <x-backoffice.link-button :href="route('movie.create')" :value="__('messages.add')" />
@@ -11,7 +11,6 @@
                 <x-slot:thead>
                     <tr>
                         <th>Peliculas</th>
-                        <th>Géneros</th>
                         <th>Opciones</th>
                     </tr>
                 </x-slot>
@@ -20,26 +19,22 @@
                         <tr>
                             <td>
                                 <div class="flex gap-2 items-center">
-                                    <img src="{{ asset('storage/'.$item->poster) }}" alt="{{ $item->title }}" class="w-[50px] h-[50px] object-cover rounded-xl overflow-hidden">
-                                    <h3 class="font-semibold uppercase text-xl">{{ $item->title }}</h3>
+                                    <img alt="{{ $item->title }}"
+                                        class="w-[30px] h-[30px] object-cover rounded-xl overflow-hidden"
+                                        @if($item->poster) src="{{ asset('storage/'.$item->poster) }}" @else src="{{ asset('assets/no-poster.png') }}" @endif>
+                                    <h3 class="font-semibold lowercase text-base">{{ $item->title }}</h3>
                                 </div>
                             </td>
                             <td>
-                                @foreach ($item->genres as $genre)
-                                    <span class="bg-red-500 py-[3px] px-[5px] text-xs rounded text-white whitespace-nowrap lowercase">
-                                        {{ $genre->name }}
-                                    </span>
-                                @endforeach
-                            </td>
-                            <td>
-                                <div class="flex gap-2">
+                                <x-backoffice.link :href="route('movie.edit', $item)" class="text-white" :value="__('messages.edit')" />
+                                {{-- <div class="flex gap-2">
                                     <x-backoffice.link-button :href="route('movie.edit', $item)" class="bg-slate-500 hover:bg-slate-600 focus:ring-slate-300" :value="__('messages.edit')" />
                                     <form action="{{ route('movie.destroy', $item) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <x-backoffice.button type="submit" class="bg-rose-500 hover:bg-rose-600 focus:ring-rose-300" :value="__('messages.delete')" />
                                     </form>
-                                </div>
+                                </div> --}}
                             </td>
                         </tr>
                     @endforeach

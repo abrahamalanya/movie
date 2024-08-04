@@ -13,6 +13,7 @@ class Movie extends Model
         'title',
         'synopsis',
         'url',
+        'trailer',
         'release_date',
         'poster'
     ];

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('synopsis');
             $table->string('url')->nullable();
+            $table->string('trailer')->nullable();
             $table->date('release_date')->nullable();
             $table->string('poster')->nullable();
             $table->timestamps();

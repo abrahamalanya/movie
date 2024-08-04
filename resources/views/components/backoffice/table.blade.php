@@ -1,6 +1,6 @@
-<section class="relative overflow-x-auto shadow-md rounded-xl">
+<section class="bg-slate-900 border border-slate-800 relative overflow-x-auto shadow-md rounded-xl">
     <table {{ $attributes->merge(['class' => 'backoffice-table w-full']) }}>
-        <thead class="bg-gray-100">
+        <thead class="bg-slate-800">
             {{ $thead }}
         </thead>
         <tbody num="0">
@@ -14,13 +14,13 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.backoffice-table th').forEach(function(element) {
-            element.classList.add('p-4', 'text-start');
+            element.classList.add('px-4', 'py-2', 'text-start');
         });
         document.querySelectorAll('.backoffice-table tbody tr').forEach(function(element) {
-            element.classList.add('border-b', 'hover:bg-gray-50');
+            element.classList.add('border-b', 'border-slate-700', 'hover:bg-slate-700');
         });
         document.querySelectorAll('.backoffice-table td').forEach(function(element) {
-            element.classList.add('px-4', 'py-2');
+            element.classList.add('px-4');
         });
     });
 </script>

@@ -10,6 +10,31 @@
         <script src="https://kit.fontawesome.com/606c0d38bd.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
         <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+
+        {{-- Jquery --}}
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        {{-- Select2 --}}
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <style>
+            .select2-container--default .select2-selection--single {
+                background-color: rgb(55 65 81);
+                border-color: rgb(75 85 99);
+            }
+            .select2-container--default .select2-selection--single .select2-selection__rendered {
+                color: #fff;
+            }
+            .select2-search--dropdown,
+            .select2-container--default .select2-search--dropdown .select2-search__field {
+                background-color: rgb(55 65 81);
+            }
+            .select2-results {
+                background-color: rgb(15 23 42);
+            }
+            .select2-container--default .select2-results__option--selected {
+                background-color: rgb(55 65 81);
+            }
+        </style>
     </head>
     <body class="bg-slate-900 text-white">
         <x-web-header></x-web-header>
@@ -38,5 +63,6 @@
                 });
             };
         </script>
+        @yield('script')
     </body>
 </html>

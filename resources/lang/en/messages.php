@@ -12,6 +12,8 @@ return [
     'series' => 'Series',
     'login' => 'Login',
     'register' => 'Register',
+    'profile' => 'Profile',
+    'logout' => 'Log Out',
     'top10' => 'Top 10 films',
     'add' => 'Add',
     'delete' => 'Delete',

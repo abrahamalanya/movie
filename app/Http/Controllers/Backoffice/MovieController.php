@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backoffice;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MovieRequest;
+use App\Http\Requests\MovieUpdateRequest;
 use App\Models\Genre;
 use App\Models\Movie;
 use Illuminate\Http\Request;
@@ -30,25 +32,8 @@ class MovieController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(MovieRequest $request)
     {
-        
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'synopsis' => 'required',
-            'url' => 'required',
-            'genre' => 'required',
-            'poster' => 'required',
-        ], [
-            'title.required' => 'El título es obligatorio.',
-            'title.string' => 'El título debe ser una cadena de texto.',
-            'title.max' => 'El título no puede tener más de 255 caracteres.',
-            'synopsis.required' => 'La Sinopsis es obligatorio.',
-            'url.required' => 'La Enlace es obligatorio.',
-            'genre.required' => 'La Género es obligatorio.',
-            'poster.required' => 'La Imagen es obligatorio.',
-        ]);
-
         // Guarda la imagen en la carpeta 'movies'
         if ($request->hasFile('poster')) {
             $path = $request->file('poster')->store('movies', 'public');
@@ -79,29 +64,26 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        return view('movie.edit', compact('movie'));
+        $genresMovie = [];
+        foreach ($movie->genres as $value) {
+            $genresMovie[] = $value->id;
+        }
+        $genres = Genre::all();
+        return view('backoffice.movie.edit', compact('movie', 'genres', 'genresMovie'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Movie $movie)
+    public function update(MovieUpdateRequest $request, Movie $movie)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'synopsis' => 'required',
-            'url' => 'required',
-        ], [
-            'title.required' => 'El título es obligatorio.',
-            'title.string' => 'El título debe ser una cadena de texto.',
-            'title.max' => 'El título no puede tener más de 255 caracteres.',
-            'synopsis.required' => 'La Sinopsis es obligatorio.',
-            'url.required' => 'La Enlace es obligatorio.',
-        ]);
         $movie->title = request('title');
         $movie->synopsis = request('synopsis');
         $movie->url = request('url');
+        $movie->trailer = request('trailer');
         $movie->save();
+
+        $movie->genres()->sync(request('genre'));
 
         return redirect()->route('movie.index')->with('success', 'Movie updated successfully.');
     }

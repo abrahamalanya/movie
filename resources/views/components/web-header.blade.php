@@ -5,7 +5,7 @@
                 <img src="{{ asset('assets/movix-logo.svg') }}" alt="">
             </a>
         </div>
-        <div class="flex">
+        <div class="flex items-center">
             <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.home') }}</a>
             {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a> --}}
             {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a> --}}
@@ -17,7 +17,10 @@
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
                                 <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                                    <div>{{ Auth::user()->name }}</div>
+                                    <div class="flex gap-2 items-center">
+                                        <img src="{{ asset('assets/avatar.png') }}" alt="" class="w-[30px] h-[30px] object-cover rounded-full overflow-hidden bg-gradient-to-r from-orange-400 to-red-500">
+                                        <div>{{ Auth::user()->name }}</div>
+                                    </div>
         
                                     <div class="ms-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -28,11 +31,11 @@
                             </x-slot>
         
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('movie.create')">
-                                    {{ __('Add Movies') }}
+                                <x-dropdown-link :href="route('movie.index')">
+                                    {{ __('messages.movies') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('profile.edit')">
-                                    {{ __('Profile') }}
+                                    {{ __('messages.profile') }}
                                 </x-dropdown-link>
         
                                 <!-- Authentication -->
@@ -42,7 +45,7 @@
                                     <x-dropdown-link :href="route('logout')"
                                             onclick="event.preventDefault();
                                                         this.closest('form').submit();">
-                                        {{ __('Log Out') }}
+                                        {{ __('messages.logout') }}
                                     </x-dropdown-link>
                                 </form>
                             </x-slot>
