@@ -7,7 +7,7 @@
             <x-backoffice.link :href="route('movie.index')" :value="__('Regresar')" />
         </section>
 
-        <form action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('movie.store') }}" method="POST" enctype="multipart/form-data" id="movieForm">
             @csrf
             <section class="flex gap-2">
                 <article class="w-1/2">
@@ -65,11 +65,12 @@
                     </div>
                     {{-- Géneros de película --}}
                     <div class="mb-4">
-                        <x-ui.label for="genre">
-                            {{ __('Género') }}
+                        <div class="flex justify-between">
+                            <h2 class="text-2xl font-bold">{{ __('Géneros') }}</h2>
                             <x-backoffice.link href="javascript:;" onclick="addGenre()" class="text-xl" :value="__('+')" />
-                        </x-ui.label>
-                        <x-ui.select name="genre" id="genre" :data="$genres" />
+                        </div>
+                        <div id="contSelectsGenres" class="flex flex-col gap-2"></div>
+                        <input type="hidden" name="genre" id="genre" value="">
                         @error('genre')
                             <x-ui.input-error>{{ $message }}</x-ui.input-error>
                         @enderror
@@ -84,11 +85,36 @@
 @endsection
 @section('script')
     <script>
-        $('#genre').select2({
-            placeholder: 'Seleccionar'
-        });
         function addGenre() {
-            alert('add genre')
+            let genres = @json($genres);
+            let contSelectsGenres = document.getElementById('contSelectsGenres');
+            let options = '';
+            genres.forEach(function (genre) {
+                options += `<option value="${genre.id}">${genre.name}</option>`;
+            });
+            let select = `<select class="w-full text-sm rounded-lg bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                    ${options}
+                </select>`;
+
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('flex', 'items-center', 'gap-2');
+            newDiv.innerHTML = select + `<x-backoffice.link href="javascript:;" class="remove-genre text-red-500" :value="__('x')" />`;
+
+            contSelectsGenres.appendChild(newDiv);
+
+            newDiv.querySelector('.remove-genre').addEventListener('click', function() {
+                newDiv.remove();
+            });
         }
+        document.getElementById('movieForm').addEventListener('submit', function(event) {
+            let selects = document.querySelectorAll('#contSelectsGenres select');
+            let genresArray = [];
+            selects.forEach(function(select) {
+                genresArray.push(select.value);
+            });
+
+            let genresJson = JSON.stringify(genresArray);
+            document.getElementById('genre').value = genresJson;
+        });
     </script>
 @endsection

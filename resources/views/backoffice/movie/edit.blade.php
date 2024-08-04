@@ -4,7 +4,7 @@
     <x-backoffice.container class="py-20 flex gap-5 flex-col">
         <a href="{{ route('movie.index') }}">Regresar</a>
 
-        <form action="{{ route('movie.update', $movie) }}" method="POST">
+        <form action="{{ route('movie.update', $movie) }}" method="POST" id="movieForm">
             @csrf
             @method('put')
             <section class="flex gap-2">
@@ -53,14 +53,12 @@
                     </div>
                     {{-- Géneros de película --}}
                     <div class="mb-4">
-                        @php
-                            $data = $genres;
-                            $datavalue = $genresMovie;
-                        @endphp
-                        <x-ui.label for="genre">
-                            {{ __('Género') }}
-                        </x-ui.label>
-                        <x-ui.select name="genre[]" id="genre" :$data :$datavalue multiple="multiple" />
+                        <div class="flex justify-between">
+                            <h2 class="text-2xl font-bold">{{ __('Géneros') }}</h2>
+                            <x-backoffice.link href="javascript:;" onclick="addGenre()" class="text-xl" :value="__('+')" />
+                        </div>
+                        <div id="contSelectsGenres" class="flex flex-col gap-2"></div>
+                        <input type="hidden" name="genre" id="genre" value="">
                         @error('genre')
                             <x-ui.input-error>{{ $message }}</x-ui.input-error>
                         @enderror
@@ -75,8 +73,65 @@
 @endsection
 @section('script')
     <script>
-        $('#genre').select2({
-            placeholder: 'Seleccionar'
+        let genresmovie = @json($movie->genres);
+        genresmovie.forEach(function (genremovie) {
+            oldGenre(genremovie.id);
+        })
+        function oldGenre(genreid) {
+            let genres = @json($genres);
+            let contSelectsGenres = document.getElementById('contSelectsGenres');
+            let options = '';
+            genres.forEach(function (genre) {
+                if (genreid === genre.id) {
+                    options += `<option value="${genre.id}" selected>${genre.name}</option>`;
+                } else {
+                    options += `<option value="${genre.id}">${genre.name}</option>`;
+                }
+            });
+            let select = `<select class="w-full text-sm rounded-lg bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                    ${options}
+                </select>`;
+
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('flex', 'items-center', 'gap-2');
+            newDiv.innerHTML = select + `<x-backoffice.link href="javascript:;" class="remove-genre text-red-500" :value="__('x')" />`;
+
+            contSelectsGenres.appendChild(newDiv);
+
+            newDiv.querySelector('.remove-genre').addEventListener('click', function() {
+                newDiv.remove();
+            });
+        }
+        function addGenre() {
+            let genres = @json($genres);
+            let contSelectsGenres = document.getElementById('contSelectsGenres');
+            let options = '';
+            genres.forEach(function (genre) {
+                options += `<option value="${genre.id}">${genre.name}</option>`;
+            });
+            let select = `<select class="w-full text-sm rounded-lg bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                    ${options}
+                </select>`;
+
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('flex', 'items-center', 'gap-2');
+            newDiv.innerHTML = select + `<x-backoffice.link href="javascript:;" class="remove-genre text-red-500" :value="__('x')" />`;
+
+            contSelectsGenres.appendChild(newDiv);
+
+            newDiv.querySelector('.remove-genre').addEventListener('click', function() {
+                newDiv.remove();
+            });
+        }
+        document.getElementById('movieForm').addEventListener('submit', function(event) {
+            let selects = document.querySelectorAll('#contSelectsGenres select');
+            let genresArray = [];
+            selects.forEach(function(select) {
+                genresArray.push(select.value);
+            });
+
+            let genresJson = JSON.stringify(genresArray);
+            document.getElementById('genre').value = genresJson;
         });
     </script>
 @endsection

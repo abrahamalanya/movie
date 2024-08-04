@@ -46,7 +46,11 @@ class MovieController extends Controller
             'release_date' => now(),
             'poster' => $path,
         ]);
-        $movie->genres()->attach(request('genre'));
+
+        if (!is_null(request('genre'))) {
+            $genresArray = json_decode(request('genre'), true);
+            $movie->genres()->attach($genresArray);
+        }
 
         return redirect()->route('movie.index')->with('success', 'Movie created successfully.');
     }
@@ -83,7 +87,10 @@ class MovieController extends Controller
         $movie->trailer = request('trailer');
         $movie->save();
 
-        $movie->genres()->sync(request('genre'));
+        if (!is_null(request('genre'))) {
+            $genresArray = json_decode(request('genre'), true);
+            $movie->genres()->sync($genresArray);
+        }
 
         return redirect()->route('movie.index')->with('success', 'Movie updated successfully.');
     }

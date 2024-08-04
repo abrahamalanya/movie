@@ -27,7 +27,7 @@ class MovieRequest extends FormRequest
             'url' => 'required',
             'trailer' => 'required',
             'poster' => 'required',
-            'genre' => 'required',
+            // 'genre' => 'required',
         ];
     }
 
@@ -46,7 +46,7 @@ class MovieRequest extends FormRequest
             'url.required' => 'El "Enlace" es obligatorio.',
             'trailer.required' => 'El "Trailer" es obligatorio.',
             'poster.required' => 'La "Imagen" es obligatorio.',
-            'genre.required' => 'La "Género" es obligatorio.',
+            // 'genre.required' => 'La "Género" es obligatorio.',
         ];
     }
 }
