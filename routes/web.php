@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Backoffice\MovieController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Movie\GenreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,15 +29,15 @@ Route::middleware('auth')->group(function () {
         'destroy' => 'movie.destroy',
     ]);
 
-    Route::resource('genres', GenreController::class)->names([
-        'index' => 'genre.index',
-        'create' => 'genre.create',
-        'store' => 'genre.store',
-        'show' => 'genre.show',
-        'edit' => 'genre.edit',
-        'update' => 'genre.update',
-        'destroy' => 'genre.destroy',
-    ]);
+    // Route::resource('genres', GenreController::class)->names([
+    //     'index' => 'genre.index',
+    //     'create' => 'genre.create',
+    //     'store' => 'genre.store',
+    //     'show' => 'genre.show',
+    //     'edit' => 'genre.edit',
+    //     'update' => 'genre.update',
+    //     'destroy' => 'genre.destroy',
+    // ]);
 });
 
 require __DIR__.'/auth.php';

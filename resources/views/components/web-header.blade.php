@@ -32,12 +32,12 @@
         
                             <x-slot name="content">
                                 @role(['system', 'backoffice'])
-                                <x-dropdown-link :href="route('movie.index')">
-                                    {{ __('messages.movies') }}
-                                </x-dropdown-link>
+                                    <x-dropdown-link :href="route('movie.index')">
+                                        {{ __('Administrar Películas') }}
+                                    </x-dropdown-link>
                                 @endrole
                                 <x-dropdown-link :href="route('profile.edit')">
-                                    {{ __('messages.account') }}
+                                    {{ __('messages.edit') }} {{ __('messages.account') }}
                                 </x-dropdown-link>
         
                                 <!-- Authentication -->

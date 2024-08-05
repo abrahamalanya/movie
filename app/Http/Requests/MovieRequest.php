@@ -26,8 +26,9 @@ class MovieRequest extends FormRequest
             'synopsis' => 'required',
             'url' => 'required',
             'trailer' => 'required',
+            'release_date' => 'required|integer|min:1900|max:' . date('Y'),
             'poster' => 'required',
-            // 'genre' => 'required',
+            'genre' => 'required|array',
         ];
     }
 
@@ -45,8 +46,13 @@ class MovieRequest extends FormRequest
             'synopsis.required' => 'La "Sinopsis" es obligatorio.',
             'url.required' => 'El "Enlace" es obligatorio.',
             'trailer.required' => 'El "Trailer" es obligatorio.',
+            'release_date.required' => 'La "Fecha de Publicación" es obligatorio.',
+            'release_date.integer' => 'La "Fecha de Publicación" debe ser numérico.',
+            'release_date.min' => 'La "Fecha de Publicación" como mínimo debe ser 1900.',
+            'release_date.max' => 'La "Fecha de Publicación" como máximo debe ser ' . date('Y') . '.',
             'poster.required' => 'La "Imagen" es obligatorio.',
-            // 'genre.required' => 'La "Género" es obligatorio.',
+            'genre.required' => 'El "Género" es obligatorio.',
+            'genre.array' => 'El "Género" es obligatorio.',
         ];
     }
 }

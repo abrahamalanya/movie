@@ -53,6 +53,16 @@
                             <x-ui.input-error>{{ $message }}</x-ui.input-error>
                         @enderror
                     </div>
+                    {{-- Fecha de Publicación --}}
+                    <div class="mb-4">
+                        <x-ui.label for="release_date">
+                            {{ __('Fecha de Publicación') }}
+                        </x-ui.label>
+                        <x-ui.input type="number" name="release_date" id="release_date" value="{{ old('release_date') }}" min="1900" max="{{ date('Y') }}" />
+                        @error('release_date')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
                     {{-- Poster --}}
                     <div class="mb-4">
                         <x-ui.label for="poster">

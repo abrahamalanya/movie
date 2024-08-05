@@ -15,7 +15,26 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::orderByDesc('id')->paginate(20);
+        // Obtener los parámetros de búsqueda
+        $title = request()->query('search_title');
+        $release = request()->query('search_release');
+
+        // Consulta base de Movie
+        $query = Movie::query();
+
+        // Filtrar por título
+        if ($title) {
+            $query->where('title', 'like', "%{$title}%");
+        }
+
+        // Filtrar por fecha de publicacion
+        if ($release) {
+            $query->whereYear('release_date', $release);
+        }
+
+        // Obtener los resultados con paginación
+        $movies = $query->orderByDesc('id')->paginate(20);
+
         return view('backoffice.movie.index', compact('movies'));
     }
 
@@ -38,11 +57,15 @@ class MovieController extends Controller
             $path = $request->file('poster')->store('movies', 'public');
         }
 
+        // Fecha de publicación
+        $year = request('release_date');
+        $release_date = "{$year}-01-01";
+
         $movie = Movie::create([
             'title' => request('title'),
             'synopsis' => request('synopsis'),
             'url' => request('url'),
-            'release_date' => now(),
+            'release_date' => $release_date,
             'poster' => $path,
         ]);
 
