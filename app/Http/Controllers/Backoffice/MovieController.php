@@ -7,7 +7,6 @@ use App\Http\Requests\MovieRequest;
 use App\Http\Requests\MovieUpdateRequest;
 use App\Models\Genre;
 use App\Models\Movie;
-use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
@@ -16,7 +15,7 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::orderByDesc('id')->paginate(15);
+        $movies = Movie::orderByDesc('id')->paginate(20);
         return view('backoffice.movie.index', compact('movies'));
     }
 
