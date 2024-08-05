@@ -10,7 +10,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/film/{movie}', [HomeController::class, 'film'])->name('film');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 
-Route::get('/dashboard', function () {
+Route::get('/perfil', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

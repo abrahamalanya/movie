@@ -7,11 +7,11 @@
         </div>
         <div class="flex items-center">
             <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.home') }}</a>
-            <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a>
-            <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a>
+            <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a>
+            <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a>
             @if (Route::has('login'))
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">Dashboard</a>
+                    <a href="{{ route('dashboard') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.profile') }}</a>
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
                         <x-dropdown align="right" width="48">
@@ -19,7 +19,7 @@
                                 <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                                     <div class="flex gap-2 items-center">
                                         <img src="{{ asset('assets/avatar.png') }}" alt="" class="w-[30px] h-[30px] object-cover rounded-full overflow-hidden bg-gradient-to-r from-orange-400 to-red-500">
-                                        <div>{{ Auth::user()->name }}</div>
+                                        <div>{{ explode(' ', auth()->user()->name)[0] }}</div>
                                     </div>
         
                                     <div class="ms-1">
@@ -31,11 +31,13 @@
                             </x-slot>
         
                             <x-slot name="content">
+                                @role(['system', 'backoffice'])
                                 <x-dropdown-link :href="route('movie.index')">
                                     {{ __('messages.movies') }}
                                 </x-dropdown-link>
+                                @endrole
                                 <x-dropdown-link :href="route('profile.edit')">
-                                    {{ __('messages.profile') }}
+                                    {{ __('messages.account') }}
                                 </x-dropdown-link>
         
                                 <!-- Authentication -->
