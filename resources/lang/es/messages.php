@@ -7,7 +7,7 @@ return [
     'search' => 'Buscar',
     'millons of movies and series, explore now.' => 'Millones de Películas y Series. Explora ahora.',
     'search for movie or tv shows...' => 'Buscar películas o series...',
-    'home' => 'Principal',
+    'home' => 'Inicio',
     'movies' => 'Películas',
     'series' => 'Series',
     'login' => 'Ingresar',

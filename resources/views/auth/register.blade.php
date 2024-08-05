@@ -59,7 +59,7 @@
                     <x-backoffice.link :href="route('login')" class="text-slate-400" :value="__('¿Ya tienes una cuenta?')" />
 
                     <x-primary-button class="ms-4">
-                        {{ __('Register') }}
+                        {{ __('Registrar') }}
                     </x-primary-button>
                 </div>
             </form>

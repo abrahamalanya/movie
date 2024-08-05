@@ -44,9 +44,9 @@
                     </div> --}}
 
                     <div class="flex items-center justify-end mt-4">
-                        @if (Route::has('password.request'))
+                        {{-- @if (Route::has('password.request'))
                             <x-backoffice.link :href="route('password.request')" class="text-slate-400" :value="__('¿Olvidaste tu contraseña?')" />
-                        @endif
+                        @endif --}}
 
                         <x-primary-button class="ms-3">
                             {{ __('messages.login') }}

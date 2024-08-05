@@ -7,8 +7,8 @@
         </div>
         <div class="flex items-center">
             <a href="{{ url('/') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.home') }}</a>
-            {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a> --}}
-            {{-- <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a> --}}
+            <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.movies') }}</a>
+            <a href="{{ url('movies') }}" class="mx-[15px] text-white font-bold hover:text-red-400">{{ __('messages.series') }}</a>
             @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/dashboard') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">Dashboard</a>
@@ -53,9 +53,9 @@
                     </div>
                 @else
                     <a href="{{ url('login') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.login') }}</a>
-                    @if (Route::has('register'))
+                    {{-- @if (Route::has('register'))
                         <a href="{{ url('register') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.register') }}</a>
-                    @endif
+                    @endif --}}
                 @endauth
             @endif
         </div>
