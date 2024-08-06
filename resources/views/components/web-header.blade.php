@@ -21,7 +21,7 @@
                                         <img src="{{ asset('assets/avatar.png') }}" alt="" class="w-[30px] h-[30px] object-cover rounded-full overflow-hidden bg-gradient-to-r from-orange-400 to-red-500">
                                         <div>{{ explode(' ', auth()->user()->name)[0] }}</div>
                                     </div>
-        
+
                                     <div class="ms-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -29,7 +29,7 @@
                                     </div>
                                 </button>
                             </x-slot>
-        
+
                             <x-slot name="content">
                                 @role(['system', 'backoffice'])
                                     <x-dropdown-link :href="route('movie.index')">
@@ -39,11 +39,10 @@
                                 <x-dropdown-link :href="route('profile.edit')">
                                     {{ __('messages.edit') }} {{ __('messages.account') }}
                                 </x-dropdown-link>
-        
+
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-        
                                     <x-dropdown-link :href="route('logout')"
                                             onclick="event.preventDefault();
                                                         this.closest('form').submit();">
@@ -54,7 +53,21 @@
                         </x-dropdown>
                     </div>
                 @else
-                    <a href="{{ url('login') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.login') }}</a>
+                    {{-- Enlace anterior --}}
+                    {{-- <a href="{{ url('login') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.login') }}</a> --}}
+
+                    <a
+                        href="javascript:;"
+                        class="mx-[15px] text-red-400 font-bold hover:text-white"
+                        x-data=""
+                        x-on:click.prevent="$dispatch('open-modal', 'open-login')"
+                    >
+                        {{ __('messages.login') }}
+                    </a>
+                    <x-ui.modal name="open-login" maxWidth="sm" :show="$errors->any()" focusable>
+                        <x-auth.form-login />
+                    </x-ui.modal>
+
                     {{-- @if (Route::has('register'))
                         <a href="{{ url('register') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.register') }}</a>
                     @endif --}}
