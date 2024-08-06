@@ -2,7 +2,10 @@
 
 @section('main')
     <x-backoffice.container class="py-20 flex gap-5 flex-col">
-        <a href="{{ route('movie.index') }}">Regresar</a>
+        <section class="py-2 flex flex-row justify-between items-center">
+            <h2 class="text-2xl font-bold">{{ __('Editar película') }}</h2>
+            <x-backoffice.link-button :href="route('movie.index')" :value="__('Regresar')" />
+        </section>
 
         <form action="{{ route('movie.update', $movie) }}" method="POST" id="movieForm">
             @csrf
