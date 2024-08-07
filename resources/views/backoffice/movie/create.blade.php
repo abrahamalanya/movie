@@ -122,9 +122,7 @@
             selects.forEach(function(select) {
                 genresArray.push(select.value);
             });
-
-            let genresJson = JSON.stringify(genresArray);
-            document.getElementById('genre').value = genresJson;
+            document.getElementById('genre').value = genresArray.join(',');
         });
     </script>
 @endsection

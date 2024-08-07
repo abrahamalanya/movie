@@ -27,8 +27,8 @@ class MovieRequest extends FormRequest
             'url' => 'required',
             'trailer' => 'required',
             'release_date' => 'required|integer|min:1900|max:' . date('Y'),
-            'poster' => 'required',
-            'genre' => 'required|array',
+            'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'genre' => 'required',
         ];
     }
 
@@ -51,8 +51,10 @@ class MovieRequest extends FormRequest
             'release_date.min' => 'La "Fecha de Publicación" como mínimo debe ser 1900.',
             'release_date.max' => 'La "Fecha de Publicación" como máximo debe ser ' . date('Y') . '.',
             'poster.required' => 'La "Imagen" es obligatorio.',
+            'poster.image' => 'La "Imagen" debe ser una imagen.',
+            'poster.mimes' => 'La "Imagen" debe ser un archivo de tipo: jpeg, png, jpg, gif, svg.',
+            'poster.max' => 'La "Imagen" no debe ser mayor a 2MB.',
             'genre.required' => 'El "Género" es obligatorio.',
-            'genre.array' => 'El "Género" es obligatorio.',
         ];
     }
 }

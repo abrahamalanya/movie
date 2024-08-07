@@ -7,6 +7,7 @@ use App\Http\Requests\MovieRequest;
 use App\Http\Requests\MovieUpdateRequest;
 use App\Models\Genre;
 use App\Models\Movie;
+use Illuminate\Support\Facades\Storage;
 
 class MovieController extends Controller
 {
@@ -53,26 +54,42 @@ class MovieController extends Controller
     public function store(MovieRequest $request)
     {
         // Guarda la imagen en la carpeta 'movies'
-        if ($request->hasFile('poster')) {
-            $path = $request->file('poster')->store('movies', 'public');
+        if (request()->hasFile('poster')) {
+            $path = request()->file('poster')->store('movies', 'public');
         }
 
         // Fecha de publicación
         $year = request('release_date');
         $release_date = "{$year}-01-01";
 
+        // Recibir genres en string
+        $genres = explode(',', request('genre'));
+
+        // Generar genres_json
+        $genreJson = [];
+        foreach ($genres as $key) {
+            $genre = Genre::find($key);
+            if ($genre) {
+                $genreJson[] = [
+                    'id' => $genre->id,
+                    'name' => $genre->name
+                ];
+            }
+        }
+
         $movie = Movie::create([
             'title' => request('title'),
             'synopsis' => request('synopsis'),
             'url' => request('url'),
+            'trailer' => request('trailer'),
             'release_date' => $release_date,
             'poster' => $path,
+            'type' => 1,
+            'genres_json' => json_encode($genreJson),
         ]);
 
-        if (!is_null(request('genre'))) {
-            $genresArray = json_decode(request('genre'), true);
-            $movie->genres()->attach($genresArray);
-        }
+        // Relación muchos a muchos
+        $movie->genres()->attach($genres);
 
         return redirect()->route('movie.index')->with('success', 'Movie created successfully.');
     }
@@ -103,16 +120,47 @@ class MovieController extends Controller
      */
     public function update(MovieUpdateRequest $request, Movie $movie)
     {
-        $movie->title = request('title');
-        $movie->synopsis = request('synopsis');
-        $movie->url = request('url');
-        $movie->trailer = request('trailer');
-        $movie->save();
-
-        if (!is_null(request('genre'))) {
-            $genresArray = json_decode(request('genre'), true);
-            $movie->genres()->sync($genresArray);
+        // Guarda la imagen en la carpeta 'movies'
+        if (request()->hasFile('poster')) {
+            // Eliminar el póster anterior
+            if ($movie->poster) {
+                Storage::disk('public')->delete($movie->poster);
+            }
+            // Subir el nuevo póster
+            $path = request()->file('poster')->store('movies', 'public');
+            $movie->poster = $path;
         }
+
+        // Fecha de publicación
+        $year = request('release_date');
+        $release_date = "{$year}-01-01";
+
+        // Recibir genres en string
+        $genres = explode(',', request('genre'));
+
+        // Generar genres_json
+        $genreJson = [];
+        foreach ($genres as $key) {
+            $genre = Genre::find($key);
+            if ($genre) {
+                $genreJson[] = [
+                    'id' => $genre->id,
+                    'name' => $genre->name
+                ];
+            }
+        }
+
+        $movie->update([
+            'title' => request('title'),
+            'synopsis' => request('synopsis'),
+            'url' => request('url'),
+            'trailer' => request('trailer'),
+            'release_date' => $release_date,
+            'genres_json' => json_encode($genreJson),
+        ]);
+
+        // Relación muchos a muchos
+        $movie->genres()->sync($genres);
 
         return redirect()->route('movie.index')->with('success', 'Movie updated successfully.');
     }
@@ -122,6 +170,9 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
+        if ($movie->poster) {
+            Storage::disk('public')->delete($movie->poster);
+        }
         $movie->delete();
 
         return redirect()->route('movie.index')->with('success', 'Movie deleted successfully.');

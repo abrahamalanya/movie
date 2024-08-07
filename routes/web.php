@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/film/{movie}', [HomeController::class, 'film'])->name('film');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
+Route::get('/updatemovie', [HomeController::class, 'updatemovie'])->name('updatemovie');
 
 Route::get('/perfil', function () {
     return view('dashboard');

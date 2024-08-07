@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('trailer')->nullable();
             $table->date('release_date')->nullable();
             $table->string('poster')->nullable();
+            $table->integer('type')->default(1); // 1movie 2series
+            $table->json('genres_json');
             $table->timestamps();
         });
     }

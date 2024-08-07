@@ -57,14 +57,6 @@
                             <td>
                                 <div class="flex gap-2 items-center">
                                     <x-backoffice.link :href="route('movie.edit', $item)" class="text-white" :value="__('messages.edit')" />
-
-                                    {{-- Eliminar anterior --}}
-                                    {{-- <form action="{{ route('movie.destroy', $item) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="text-white hover:text-rose-500 font-medium text-sm" type="submit">{{ __('messages.delete') }}</button>
-                                    </form> --}}
-
                                     <x-backoffice.link 
                                         class="text-white hover:text-rose-500"
                                         :value="__('messages.delete')"

@@ -7,7 +7,7 @@
             <x-backoffice.link-button :href="route('movie.index')" :value="__('Regresar')" />
         </section>
 
-        <form action="{{ route('movie.update', $movie) }}" method="POST" id="movieForm">
+        <form action="{{ route('movie.update', $movie) }}" method="POST" enctype="multipart/form-data" id="movieForm">
             @csrf
             @method('put')
             <section class="flex gap-2">
@@ -51,6 +51,34 @@
                         </x-ui.label>
                         <x-ui.input type="text" name="trailer" id="trailer" value="{{ $movie->trailer }}" />
                         @error('trailer')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
+                    {{-- Fecha de Publicación --}}
+                    <div class="mb-4">
+                        <x-ui.label for="release_date">
+                            {{ __('Fecha de Publicación') }}
+                        </x-ui.label>
+                        <x-ui.input type="number" name="release_date" id="release_date" value="{{ Carbon\Carbon::parse($movie->release_date)->format('Y') }}" min="1900" max="{{ date('Y') }}" />
+                        @error('release_date')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
+                    {{-- Poster --}}
+                    <div class="mb-4">
+                        <x-ui.label for="poster">
+                            {{ __('Imagen Actual') }}
+                        </x-ui.label>
+                        <img alt="{{ $movie->title }}"
+                        class="w-[100px] h-[100px] object-cover rounded-xl overflow-hidden"
+                        @if($movie->poster) src="{{ asset('storage/'.$movie->poster) }}" @else src="{{ asset('assets/no-poster.png') }}" @endif>
+                    </div>
+                    <div class="mb-4">
+                        <x-ui.label for="poster">
+                            {{ __('Imagen Nueva') }}
+                        </x-ui.label>
+                        <x-ui.input type="file" name="poster" id="poster" />
+                        @error('poster')
                             <x-ui.input-error>{{ $message }}</x-ui.input-error>
                         @enderror
                     </div>
@@ -132,9 +160,7 @@
             selects.forEach(function(select) {
                 genresArray.push(select.value);
             });
-
-            let genresJson = JSON.stringify(genresArray);
-            document.getElementById('genre').value = genresJson;
+            document.getElementById('genre').value = genresArray.join(',');
         });
     </script>
 @endsection
