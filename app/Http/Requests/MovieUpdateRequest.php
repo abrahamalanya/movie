@@ -27,7 +27,7 @@ class MovieUpdateRequest extends FormRequest
             'url' => 'required',
             'trailer' => 'required',
             'release_date' => 'required|integer|min:1900|max:' . date('Y'),
-            'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'poster' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'genre' => 'required',
         ];
     }

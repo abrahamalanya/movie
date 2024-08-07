@@ -3,11 +3,13 @@
         $origin = request()->getSchemeAndHttpHost();
     @endphp
     <div class="plyr__video-embed" id="player">
-        <iframe 
-            src="{{ $movie->url }}?origin={{ $origin }}&iv_load_policy=3&modestbranding=1&rel=0"
-            allowfullscreen
-            allow="autoplay">
-        </iframe>
+        @if($movie->url != '')
+            <iframe 
+                src="{{ $movie->url }}?origin={{ $origin }}&iv_load_policy=3&modestbranding=1&rel=0"
+                allowfullscreen
+                allow="autoplay">
+            </iframe>
+        @endif
     </div>
 </section>
 <section class="flex flex-col justify-between items-start">
