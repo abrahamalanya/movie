@@ -18,7 +18,7 @@
                         class="w-[calc(100%-100px)] md:w-[calc(100%-150px)] h-[40px] md:h-[50px] bg-white text-black px-[15px] md:px-[30px]
                         rounded-l-[30px] text-[14px] md:text-[20px] outline-none border-none font-medium">
                     <button type="submit" class="w-[100px] md:w-[150px] h-[40px] md:h-[50px]
-                        rounded-r-[30px] text-[18px] md:text-[20px] outline-none border-none font-medium bg-gradient-to-r from-orange-400 to-red-500">{{ __('messages.search') }}</button>
+                        rounded-r-[30px] text-[18px] md:text-[20px] outline-none border-none font-medium bg-gradient-to-r hover:bg-gradient-to-l from-cyan-500 to-cyan-800">{{ __('messages.search') }}</button>
                 </form>
             </section>
         </x-web-container>
