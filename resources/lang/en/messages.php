@@ -12,5 +12,11 @@ return [
     'series' => 'Series',
     'login' => 'Login',
     'register' => 'Register',
+    'profile' => 'Profile',
+    'logout' => 'Log Out',
+    'account' => 'Account',
     'top10' => 'Top 10 films',
+    'add' => 'Add',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
 ];
