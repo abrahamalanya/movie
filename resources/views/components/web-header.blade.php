@@ -11,7 +11,7 @@
             <x-ui.link :href="url('/')" :value="__('messages.series')" />
             @if (Route::has('login'))
                 @auth
-                    <x-ui.link :href="route('dashboard')" class="text-orange-300" :value="__('messages.profile')" />
+                    <x-ui.link :href="route('dashboard')" class="text-cyan-300" :value="__('messages.profile')" />
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center">
                         <x-dropdown align="right" width="48">
@@ -57,7 +57,7 @@
                     {{-- <a href="{{ url('login') }}" class="mx-[15px] text-red-400 font-bold hover:text-white">{{ __('messages.login') }}</a> --}}
 
                     <x-ui.link 
-                        class="text-orange-300"
+                        class="text-cyan-300"
                         :value="__('messages.login')"
                         x-data=""
                         x-on:click.prevent="$dispatch('open-modal', 'open-login')" />
