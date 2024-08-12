@@ -3,27 +3,27 @@
 @section('backoffice')
     <x-backoffice.container class="flex flex-col">
         <section class="py-2 flex flex-row justify-between items-center">
-            <h2 class="text-2xl font-bold">{{ __('messages.movies') }}</h2>
-            <x-backoffice.link-button :href="route('movie.create')" :value="__('messages.add')" />
+            <h2 class="text-2xl font-bold">{{ __('Usuarios') }}</h2>
+            <x-backoffice.link-button :href="route('user.create')" :value="__('messages.add')" />
         </section>
 
         {{-- Filtros --}}
         <section>
-            <form action="{{ route('movie.index') }}" method="GET">
+            <form action="{{ route('user.index') }}" method="GET">
                 <div class="flex gap-2 mb-4 w-3/4">
                     <x-ui.input
                         type="text"
-                        name="search_title"
-                        id="search_title"
-                        value="{{ request()->query('search_title') }}"
-                        placeholder="Buscar película"
+                        name="search_name"
+                        id="search_name"
+                        value="{{ request()->query('search_name') }}"
+                        placeholder="Buscar usuario"
                         class="w-[max-content]" />
                     <x-ui.input
-                        type="number"
-                        name="search_release"
-                        id="search_release"
-                        value="{{ request()->query('search_release') }}"
-                        placeholder="Fecha de Publicación"
+                        type="text"
+                        name="search_email"
+                        id="search_email"
+                        value="{{ request()->query('search_email') }}"
+                        placeholder="Correo Electrónico"
                         class="w-[max-content]" />
                     <x-ui.button type="submit" class="bg-sky-600 hover:bg-sky-800">
                         {{ __('Buscar') }}
@@ -37,34 +37,34 @@
             <x-backoffice.table>
                 <x-slot:thead>
                     <tr>
-                        <th>{{ __('Película') }}</th>
-                        <th>{{ __('Publicación') }}</th>
+                        <th>{{ __('Nombre') }}</th>
+                        <th>{{ __('Correo Electrónico') }}</th>
                         <th>{{ __('Opciones') }}</th>
                     </tr>
                 </x-slot>
                 <x-slot:tbody>
-                    @foreach ($movies as $item)
+                    @foreach ($users as $item)
                         <tr>
                             <td>
                                 <div class="flex gap-2 items-center">
-                                    <img alt="{{ $item->title }}"
+                                    <img alt="{{ $item->name }}"
                                         class="w-[30px] h-[30px] object-cover rounded-xl overflow-hidden"
-                                        @if($item->poster) src="{{ asset('storage/'.$item->poster) }}" @else src="{{ asset('assets/no-poster.png') }}" @endif>
-                                    <h3 class="font-semibold lowercase text-base">{{ $item->title }}</h3>
+                                        @if($item->avatar) src="{{ asset('storage/'.$item->avatar) }}" @else src="{{ asset('assets/avatar.png') }}" @endif>
+                                    <h3 class="font-semibold lowercase text-base">{{ $item->name }}</h3>
                                 </div>
                             </td>
-                            <td>{{ Carbon\Carbon::parse($item->release_date)->format('Y') }}</td>
+                            <td>{{ $item->email }}</td>
                             <td>
                                 <div class="flex gap-2 items-center">
-                                    <x-backoffice.link :href="route('movie.edit', $item)" class="text-white" :value="__('messages.edit')" />
+                                    <x-backoffice.link :href="route('user.edit', $item)" class="text-white" :value="__('messages.edit')" />
                                     <x-backoffice.link 
                                         class="text-white hover:text-rose-500"
                                         :value="__('messages.delete')"
                                         x-data=""
-                                        x-on:click.prevent="$dispatch('open-modal', 'open-delete-movie-{{ $item->id }}')"
+                                        x-on:click.prevent="$dispatch('open-modal', 'open-delete-user-{{ $item->id }}')"
                                     />
-                                    <x-ui.modal name="open-delete-movie-{{ $item->id }}" maxWidth="sm" :show="$errors->any()"  focusable>
-                                        <form action="{{ route('movie.destroy', $item) }}" method="POST" class="p-6">
+                                    <x-ui.modal name="open-delete-user-{{ $item->id }}" maxWidth="sm" :show="$errors->any()"  focusable>
+                                        <form action="{{ route('user.destroy', $item) }}" method="POST" class="p-6">
                                             @csrf
                                             @method('DELETE')
 
@@ -91,7 +91,7 @@
                 </x-slot>
             </x-backoffice.table>
             <section class="pt-4">
-                {{ $movies->appends(request()->query())->links() }}
+                {{ $users->appends(request()->query())->links() }}
             </section>
         </section>
     </x-backoffice.container>

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backoffice\GenreController;
 use App\Http\Controllers\Backoffice\MovieController;
+use App\Http\Controllers\Backoffice\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,16 +31,24 @@ Route::middleware('auth')->group(function () {
         'update' => 'movie.update',
         'destroy' => 'movie.destroy',
     ]);
-
-    // Route::resource('genres', GenreController::class)->names([
-    //     'index' => 'genre.index',
-    //     'create' => 'genre.create',
-    //     'store' => 'genre.store',
-    //     'show' => 'genre.show',
-    //     'edit' => 'genre.edit',
-    //     'update' => 'genre.update',
-    //     'destroy' => 'genre.destroy',
-    // ]);
+    Route::resource('backoffice/genres', GenreController::class)->names([
+        'index' => 'genre.index',
+        'create' => 'genre.create',
+        'store' => 'genre.store',
+        'show' => 'genre.show',
+        'edit' => 'genre.edit',
+        'update' => 'genre.update',
+        'destroy' => 'genre.destroy',
+    ]);
+    Route::resource('backoffice/users', UserController::class)->names([
+        'index' => 'user.index',
+        'create' => 'user.create',
+        'store' => 'user.store',
+        'show' => 'user.show',
+        'edit' => 'user.edit',
+        'update' => 'user.update',
+        'destroy' => 'user.destroy',
+    ]);
 });
 
 require __DIR__.'/auth.php';

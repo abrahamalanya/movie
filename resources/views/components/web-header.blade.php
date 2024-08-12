@@ -18,7 +18,9 @@
                             <x-slot name="trigger">
                                 <button class="inline-flex items-center p-1 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-200 bg-gray-800 hover:text-cyan-400 focus:outline-none transition ease-in-out duration-150">
                                     <div class="flex gap-2 items-center">
-                                        <img src="{{ asset('assets/avatar.png') }}" alt="" class="w-[30px] h-[30px] object-cover rounded-full overflow-hidden bg-gradient-to-r from-orange-400 to-red-500">
+                                        <img alt="{{ explode(' ', auth()->user()->name)[0] }}"
+                                            class="w-[30px] h-[30px] object-cover rounded-full overflow-hidden"
+                                            @if(auth()->user()->avatar) src="{{ asset('storage/'.auth()->user()->avatar) }}" @else src="{{ asset('assets/avatar.png') }}" @endif>
                                         <div>{{ explode(' ', auth()->user()->name)[0] }}</div>
                                     </div>
 
