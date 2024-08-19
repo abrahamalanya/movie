@@ -62,6 +62,7 @@ class UserController extends Controller
             'email' => request('email'),
             'password' => Hash::make(request('password')),
             'avatar' => $path,
+            'phone' => request('phone'),
         ]);
 
         // Asignar el rol de usuario
@@ -109,6 +110,7 @@ class UserController extends Controller
         $user->update([
             'name' => request('name'),
             'email' => request('email'),
+            'phone' => request('phone'),
         ]);
 
         return redirect()->route('user.index')->with('success', 'User updated successfully.');

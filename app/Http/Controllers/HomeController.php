@@ -11,8 +11,19 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $movies = Movie::orderByDesc('id')->paginate(15);
-        $moviesTop = Movie::orderByDesc('id')->limit(10)->get();
+        $query = Movie::orderByDesc('id');
+        $moviesTop = null;
+
+        // 1movie 2series
+        $type = request('type');
+        if ($type === 'film') {
+           $query->where('type', 1);
+        } elseif ($type === 'serie') {
+           $query->where('type', 2);
+        } else {
+            $moviesTop = $query->limit(10)->get();
+        }
+        $movies = $query->paginate(15);
 
         return view('home', compact('movies', 'moviesTop'));
     }
@@ -20,10 +31,10 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('query');
-        $movies = Movie::where('title', 'like', '%'.$query.'%')->orderByDesc('id')->paginate(15);
-        $moviesTop = Movie::orderByDesc('id')->limit(10)->get();
-
-        return view('home', compact('movies', 'moviesTop'));
+        $movies = Movie::where('title', 'like', '%'.$query.'%')
+            ->orWhere('synopsis', 'like', '%'.$query.'%')
+            ->orderByDesc('id')->paginate(15);
+        return view('home', compact('movies'));
     }
 
     public function film(Movie $movie)
@@ -31,6 +42,7 @@ class HomeController extends Controller
         return view('film', compact('movie'));
     }
 
+    // Eliminar una vez actualizado la base de datos
     public function updatemovie()
     {
         $moviesOld = DB::table('cine_pelicula')->get();

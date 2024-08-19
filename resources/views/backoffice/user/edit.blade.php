@@ -32,8 +32,6 @@
                             <x-ui.input-error>{{ $message }}</x-ui.input-error>
                         @enderror
                     </div>
-                </article>
-                <article class="w-1/2">
                     {{-- Password --}}
                     <div class="mb-4">
                         <x-ui.label for="password" class="text-start">
@@ -41,6 +39,18 @@
                         </x-ui.label>
                         <x-ui.input type="password" name="password" id="password" autocomplete="new-password" />
                         @error('password')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
+                </article>
+                <article class="w-1/2">
+                    {{-- Phone --}}
+                    <div class="mb-4">
+                        <x-ui.label for="phone" class="text-start">
+                            {{ __('Nro. Celular') }}
+                        </x-ui.label>
+                        <x-ui.input type="text" name="phone" id="phone" value="{{ $user->phone }}" required autocomplete="phone" />
+                        @error('phone')
                             <x-ui.input-error>{{ $message }}</x-ui.input-error>
                         @enderror
                     </div>

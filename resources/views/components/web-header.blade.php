@@ -7,8 +7,8 @@
         </div>
         <div class="flex gap-5 items-center">
             <x-ui.link :href="url('/')" :value="__('messages.home')" />
-            <x-ui.link :href="url('/')" :value="__('messages.movies')" />
-            <x-ui.link :href="url('/')" :value="__('messages.series')" />
+            <x-ui.link :href="url('/?type=film')" :value="__('messages.movies')" />
+            <x-ui.link :href="url('/?type=serie')" :value="__('messages.series')" />
             @if (Route::has('login'))
                 @auth
                     <x-ui.link :href="route('dashboard')" class="text-cyan-300" :value="__('messages.profile')" />

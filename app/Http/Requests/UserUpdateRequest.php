@@ -27,6 +27,7 @@ class UserUpdateRequest extends FormRequest
             'email' => ['required', 'unique:users,email,'.$this->user->id],
             'password' => 'nullable|min:8',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'phone' => 'required',
         ];
     }
 
@@ -45,6 +46,7 @@ class UserUpdateRequest extends FormRequest
             'avatar.image' => 'El "Avatar" debe ser una imagen.',
             'avatar.mimes' => 'El "Avatar" debe ser un archivo de tipo: jpeg, png, jpg, gif, svg.',
             'avatar.max' => 'El "Avatar" no debe ser mayor a 2MB.',
+            'phone.required' => 'El "Celular" es obligatorio.',
         ];
     }
 }

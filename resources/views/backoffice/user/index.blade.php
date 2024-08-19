@@ -39,6 +39,7 @@
                     <tr>
                         <th>{{ __('Nombre') }}</th>
                         <th>{{ __('Correo Electrónico') }}</th>
+                        <th>{{ __('Celular') }}</th>
                         <th>{{ __('Opciones') }}</th>
                     </tr>
                 </x-slot>
@@ -54,6 +55,7 @@
                                 </div>
                             </td>
                             <td>{{ $item->email }}</td>
+                            <td>{{ $item->phone }}</td>
                             <td>
                                 <div class="flex gap-2 items-center">
                                     <x-backoffice.link :href="route('user.edit', $item)" class="text-white" :value="__('messages.edit')" />

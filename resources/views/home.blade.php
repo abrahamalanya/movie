@@ -23,13 +23,15 @@
             </section>
         </x-web-container>
     </article>
-    <article class="relative mb-8">
-        @php $j = 0; @endphp
-        <x-movie-tape :$j :$moviesTop></x-movie-tape>
-    </article>
+    @isset($moviesTop)
+        <article class="relative mb-8">
+            @php $j = 0; @endphp
+            <x-movie-tape :$j :$moviesTop></x-movie-tape>
+        </article>
+    @endisset
     <article class="relative">
         <x-web-container class="relative">
-            <section class="w-full flex flex-wrap gap-3 md:gap-5">
+            <section class="w-full flex flex-wrap justify-center gap-1 md:gap-5">
                 @foreach ($movies as $item)
                     <x-movie-card :$item />
                 @endforeach
