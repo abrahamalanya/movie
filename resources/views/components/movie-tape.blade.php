@@ -1,6 +1,6 @@
-<x-web-container class="flex items-center justify-between mb-2">
+{{-- <x-web-container class="flex items-center justify-between mb-2">
     <span class="text-2xl text-normal font-semibold">{{ __('messages.top10') }}</span>
-</x-web-container>
+</x-web-container> --}}
 <x-web-container class="relative">
     <x-movie-tape-navigation class="left-[-4%]" onclick="navigation({{$j}}, 'left')">
         <i class="fa-solid fa-chevron-left"></i>

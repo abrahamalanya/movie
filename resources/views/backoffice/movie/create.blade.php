@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.backoffice')
 
-@section('main')
-    <x-backoffice.container class="py-20 flex gap-5 flex-col">
+@section('backoffice')
+    <x-backoffice.container class="flex gap-5 flex-col">
         <section class="py-2 flex flex-row justify-between items-center">
             <h2 class="text-2xl font-bold">{{ __('Registrar película') }}</h2>
             <x-backoffice.link-button :href="route('movie.index')" :value="__('Regresar')" />
