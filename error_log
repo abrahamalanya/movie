@@ -1,0 +1,179 @@
+[21-Aug-2024 17:11:15 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:15 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:44 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:44 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:47 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:47 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:48 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:48 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:49 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:11:49 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:02 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:02 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:03 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:03 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:03 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:03 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:04 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:04 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:04 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:04 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:24 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:24 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:25 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:25 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:25 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:25 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:26 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:26 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:56 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:56 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:57 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:57 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:57 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:57 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:58 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:58 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:58 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:58 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:59 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:12:59 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:21 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:21 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:22 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:22 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:22 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:22 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:23 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:23 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:23 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:23 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:24 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:13:24 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:14:13 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:14:13 UTC] PHP Fatal error:  require(): Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:16:28 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:16:28 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:16:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/public/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/public/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/public/index.php on line 13
+[21-Aug-2024 17:19:26 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:26 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:27 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:27 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:27 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:27 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:28 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:28 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:28 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:28 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:29 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:29 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:29 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:29 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:30 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:30 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:30 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:30 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:31 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:31 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:31 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:31 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:32 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:32 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:32 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:32 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:33 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:33 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:33 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:33 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:34 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:34 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:35 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:35 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:35 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:35 UTC] PHP Warning:  require(/home/cqqqwjzl/wankaplus.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:19:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/cqqqwjzl/wankaplus.com/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/cqqqwjzl/wankaplus.com/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cqqqwjzl/wankaplus.com/index.php on line 13
+[21-Aug-2024 17:21:01 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:21:07 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:21:30 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:21:30 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:21:31 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:22:59 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:23:00 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:23:00 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:23:01 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:23:01 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
+[21-Aug-2024 17:23:02 UTC] PHP Parse error:  syntax error, unexpected token "readonly", expecting "abstract" or "final" or "class" in /home/cqqqwjzl/wankaplus.com/vendor/sebastian/version/src/Version.php on line 23
