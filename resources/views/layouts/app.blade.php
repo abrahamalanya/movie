@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'WankaPlus') }} - @yield('title')</title>
+        <title>{{ config('app.name', 'WankaPlus') }} @yield('title')</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://kit.fontawesome.com/606c0d38bd.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
