@@ -17,11 +17,13 @@ class HomeController extends Controller
         // 1movie 2series
         $type = request('type');
         if ($type === 'film') {
-           $query->where('type', 1);
+            $query->where('type', 1);
+            $moviesTop = Movie::where('type', 1)->inRandomOrder()->limit(10)->get();
         } elseif ($type === 'serie') {
-           $query->where('type', 2);
+            $query->where('type', 2);
+            $moviesTop = Movie::where('type', 2)->inRandomOrder()->limit(10)->get();
         } else {
-            $moviesTop = $query->limit(10)->get();
+            $moviesTop = Movie::inRandomOrder()->limit(10)->get();
         }
         $movies = $query->paginate(15);
 
