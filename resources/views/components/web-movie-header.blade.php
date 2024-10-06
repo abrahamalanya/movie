@@ -1,9 +1,10 @@
-<section>
+<section class="flex justify-between">
     <h3 class="text-2xl font-semibold uppercase">{{ $movie->title }}</h3>
+    <x-backoffice.link-button :href="url('/')" :value="__('Regresar')" />
 </section>
 <section class="flex flex-col gap-4">
     <section class="shrink-0">
-        @php
+        {{-- @php
             $origin = request()->getSchemeAndHttpHost();
         @endphp
         <div class="plyr__video-embed" id="player">
@@ -15,7 +16,30 @@
                     class="w-full h-[700px]">
                 </iframe>
             @endif
-        </div>
+        </div> --}}
+        @if($movie->url != '')
+            @if(str_contains($movie->url, 'youtube') || str_contains($movie->url, 'youtu.be'))
+                <div class="plyr__video-embed" id="player">
+                    <iframe
+                        src="{{ $movie->url }}?origin={{ request()->getSchemeAndHttpHost() }}&iv_load_policy=3&modestbranding=1&rel=0"
+                        allowfullscreen
+                        allowtransparency
+                        allow="autoplay"
+                    ></iframe>
+                </div>
+            @elseif(Str::endsWith($movie->url, ['.mp4', '.mkv']))
+                <video id="player"
+                    playsinline controls
+                    data-poster="{{ asset('storage/'.$movie->poster) }}"
+                    class="w-full h-[700px]">
+                    @if(Str::endsWith($movie->url, '.mp4'))
+                        <source src="{{ $movie->url }}" type="video/mp4" />
+                    @elseif(Str::endsWith($movie->url, '.mkv'))
+                        <source src="{{ $movie->url }}" type="video/mkv" />
+                    @endif
+                </video>
+            @endif
+        @endif
     </section>
     <section class="flex gap-2">
         <section class="w-1/6">
@@ -80,11 +104,12 @@
     </section>
 </section>
 <script>
-    const player = new Plyr('#player', {
-        youtube: {
-            noCookie: true,
-            rel: 0,
-            showinfo: 0
-        }
-    });
+    const player = new Plyr('#player');
+    // const player = new Plyr('#player', {
+    //     youtube: {
+    //         noCookie: true,
+    //         rel: 0,
+    //         showinfo: 0,
+    //     }
+    // });
 </script>

@@ -39,11 +39,9 @@
     <body class="bg-slate-900 text-white">
         {{-- message status --}}
         @if (session('success'))
-            {{-- <x-web-container class="relative py-4"> --}}
-                <x-backoffice.alert class="absolute z-20 top-0 right-0 font-medium">
-                    {{ session('success') }}
-                </x-backoffice.alert>
-            {{-- </x-web-container> --}}
+            <x-backoffice.alert class="absolute z-20 top-0 right-0 font-medium">
+                {{ session('success') }}
+            </x-backoffice.alert>
         @endif
 
         <x-web-header></x-web-header>
@@ -51,12 +49,6 @@
             @yield('main')
         </x-web-main>
         <x-web-footer></x-web-footer>
-        {{-- message status --}}
-        {{-- @if (session('success'))
-            <x-web-container class="">
-                {{ session('success') }}
-            </x-web-container>
-        @endif --}}
         <script>
             const navigation = (key, dir) => {
                 const container = document.getElementById('carouselContainer'+key);
