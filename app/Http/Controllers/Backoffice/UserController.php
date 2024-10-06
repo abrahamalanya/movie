@@ -61,7 +61,7 @@ class UserController extends Controller
             'name' => request('name'),
             'email' => request('email'),
             'password' => Hash::make(request('password')),
-            'avatar' => $path,
+            'avatar' => $path ?? '',
             'phone' => request('phone'),
         ]);
 
@@ -92,7 +92,7 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, User $user)
     {
-        // Guarda la imagen en la carpeta 'movies'
+        // Guarda la imagen en la carpeta 'users'
         if (request()->hasFile('avatar')) {
             // Eliminar avatar anterior
             if ($user->avatar) {
@@ -119,8 +119,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        if ($user->avatar != '') {
+            Storage::disk('public')->delete($user->avatar);
+        }
+        $user->delete();
+        return redirect()->route('user.index')->with('success', 'User delete successfully.');
     }
 }

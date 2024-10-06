@@ -40,6 +40,7 @@
                         <th>{{ __('Nombre') }}</th>
                         <th>{{ __('Correo Electrónico') }}</th>
                         <th>{{ __('Celular') }}</th>
+                        <th>{{ __('Rol') }}</th>
                         <th>{{ __('Opciones') }}</th>
                     </tr>
                 </x-slot>
@@ -56,34 +57,37 @@
                             </td>
                             <td>{{ $item->email }}</td>
                             <td>{{ $item->phone }}</td>
+                            <td class="uppercase">{{ $item->getRoleNames()->implode(', ') }}</td>
                             <td>
                                 <div class="flex gap-2 items-center">
                                     <x-backoffice.link :href="route('user.edit', $item)" class="text-white" :value="__('messages.edit')" />
-                                    <x-backoffice.link 
-                                        class="text-white hover:text-rose-500"
-                                        :value="__('messages.delete')"
-                                        x-data=""
-                                        x-on:click.prevent="$dispatch('open-modal', 'open-delete-user-{{ $item->id }}')"
-                                    />
-                                    <x-ui.modal name="open-delete-user-{{ $item->id }}" maxWidth="sm" :show="$errors->any()"  focusable>
-                                        <form action="{{ route('user.destroy', $item) }}" method="POST" class="p-6">
-                                            @csrf
-                                            @method('DELETE')
+                                    @if (!$item->hasRole('system'))
+                                        <x-backoffice.link 
+                                            class="text-white hover:text-rose-500"
+                                            :value="__('messages.delete')"
+                                            x-data=""
+                                            x-on:click.prevent="$dispatch('open-modal', 'open-delete-user-{{ $item->id }}')"
+                                        />
+                                        <x-ui.modal name="open-delete-user-{{ $item->id }}" maxWidth="sm" :show="$errors->any()"  focusable>
+                                            <form action="{{ route('user.destroy', $item) }}" method="POST" class="p-6">
+                                                @csrf
+                                                @method('DELETE')
 
-                                            <h3 class="font-black text-[50px] md:text-base mb-4">{{ __('messages.delete') }}</h3>
+                                                <h3 class="font-black text-[50px] md:text-base mb-4">{{ __('messages.delete') }}</h3>
 
-                                            <p class="font-semibold text-xl text-gray-400">{{ __($item->title) }}</p>
+                                                <p class="font-semibold text-xl text-gray-400">{{ __($item->name) }}</p>
 
-                                            <div class="flex items-center justify-end gap-2 mt-4">
-                                                <x-ui.button type="button" class="bg-gray-500 hover:bg-gray-700" style="width: max-content" x-on:click="$dispatch('close')">
-                                                    {{ __('Cancelar') }}
-                                                </x-ui.button>
-                                                <x-ui.button type="submit" class="bg-rose-500 hover:bg-rose-700" style="width: max-content">
-                                                    {{ __('messages.delete') }}
-                                                </x-ui.button>
-                                            </div>
-                                        </form>
-                                    </x-ui.modal>
+                                                <div class="flex items-center justify-end gap-2 mt-4">
+                                                    <x-ui.button type="button" class="bg-gray-500 hover:bg-gray-700" style="width: max-content" x-on:click="$dispatch('close')">
+                                                        {{ __('Cancelar') }}
+                                                    </x-ui.button>
+                                                    <x-ui.button type="submit" class="bg-rose-500 hover:bg-rose-700" style="width: max-content">
+                                                        {{ __('messages.delete') }}
+                                                    </x-ui.button>
+                                                </div>
+                                            </form>
+                                        </x-ui.modal>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
