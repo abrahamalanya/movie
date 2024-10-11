@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/film/{movie}', [HomeController::class, 'film'])->name('film');
+Route::get('/episode/{episode}', [HomeController::class, 'episode'])->name('episode');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 // Eliminar una vez actualizado la base de datos
 Route::get('/updatemovie', [HomeController::class, 'updatemovie'])->name('updatemovie');
+Route::get('/updateserie', [HomeController::class, 'updateserie'])->name('updateserie');
 
 Route::get('/perfil', function () {
     return view('dashboard');

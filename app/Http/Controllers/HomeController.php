@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Episode;
 use App\Models\Genre;
 use App\Models\Movie;
 use Illuminate\Http\Request;
@@ -41,7 +42,35 @@ class HomeController extends Controller
 
     public function film(Movie $movie)
     {
-        return view('film', compact('movie'));
+        $type = $movie->type;
+        if ($type === 1) {
+            return view('film', compact('movie'));
+        } elseif ($type === 2) {
+            // Obtener el primer episodio de la serie
+            $firstEpisode = Episode::where('movie_id', $movie->id)
+                ->orderBy('season_number')
+                ->orderBy('episode_number')
+                ->first();
+            // Obtener los episodios restantes organizados por temporada
+            $episodesBySeason = Episode::where('movie_id', $movie->id)
+                ->orderBy('season_number')
+                ->orderBy('episode_number')
+                ->get()
+                ->groupBy('season_number');
+            return view('episode', compact('movie', 'firstEpisode', 'episodesBySeason'));
+        }
+    }
+
+    public function episode(Episode $episode)
+    {
+        $movie = Movie::find($episode->movie_id);
+        $firstEpisode = Episode::find($episode->id);
+        $episodesBySeason = Episode::where('movie_id', $movie->id)
+            ->orderBy('season_number')
+            ->orderBy('episode_number')
+            ->get()
+            ->groupBy('season_number');
+        return view('episode', compact('movie', 'firstEpisode', 'episodesBySeason'));
     }
 
     // Eliminar una vez actualizado la base de datos
@@ -83,5 +112,46 @@ class HomeController extends Controller
         DB::table('cine_pelicula')->truncate();
         DB::table('cine_peliculacategoria')->truncate();
         dd('update perfect');
+    }
+
+    public function updateserie()
+    {
+        $moviesOld = DB::table('cine_pelicula')->where('idcine_tipo', 2)->get();
+        $moviesNow = Movie::where('type', 2)->get();
+
+        // Crear un mapa de películas nuevas por su trailer para facilitar la búsqueda
+        $moviesNowMap = $moviesNow->keyBy('trailer');
+
+        foreach ($moviesOld as $oldMovie) {
+            // Verificar si la película antigua tiene un equivalente en las películas actuales
+            if (isset($moviesNowMap[$oldMovie->urlvideotrailer])) {
+                $currentMovie = $moviesNowMap[$oldMovie->urlvideotrailer];
+
+                // Obtener todos los episodios de la película antigua de una sola vez
+                $episodios = DB::table('cine_episodio')->where('idcine_pelicula', $oldMovie->id)->get();
+
+                $episodiosData = [];
+                foreach ($episodios as $epi) {
+                    $episodiosData[] = [
+                        'season_number' => $epi->idcine_temporada,
+                        'episode_number' => $epi->orden,
+                        'title' => $epi->nombre,
+                        'description' => $epi->descripcion,
+                        'url' => $epi->urlvideo,
+                        'movie_id' => $currentMovie->id,
+                    ];
+                }
+
+                // Crear episodios en bloque
+                if (!empty($episodiosData)) {
+                    Episode::insert($episodiosData);
+
+                    // Eliminar todos los episodios antiguos de una vez
+                    DB::table('cine_episodio')->whereIn('id', $episodios->pluck('id'))->delete();
+                }
+            }
+        }
+        DB::table('cine_pelicula')->truncate();
+        dd('Update episodes perfect');
     }
 }

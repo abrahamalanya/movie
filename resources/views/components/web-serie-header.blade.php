@@ -1,33 +1,36 @@
 <section class="flex justify-between">
     <h3 class="text-2xl font-semibold uppercase">{{ $movie->title }}</h3>
+    <h3 class="text-xl font-semibold uppercase">{{ __('Episodio:') }} {{ $firstEpisode->title }}</h3>
     <x-backoffice.link-button :href="url('/')" :value="__('Regresar')" />
 </section>
 <section class="flex flex-col gap-4">
+    {{-- movie --}}
     <section class="shrink-0">
-        @if($movie->url != '')
-            @if(str_contains($movie->url, 'youtube') || str_contains($movie->url, 'youtu.be'))
+        @if($firstEpisode->url != '')
+            @if(str_contains($firstEpisode->url, 'youtube') || str_contains($firstEpisode->url, 'youtu.be'))
                 <div class="plyr__video-embed" id="player">
                     <iframe
-                        src="{{ $movie->url }}?origin={{ request()->getSchemeAndHttpHost() }}&iv_load_policy=3&modestbranding=1&rel=0"
+                        src="{{ $firstEpisode->url }}?origin={{ request()->getSchemeAndHttpHost() }}&iv_load_policy=3&modestbranding=1&rel=0"
                         allowfullscreen
                         allowtransparency
                         allow="autoplay"
                     ></iframe>
                 </div>
-            @elseif(Str::endsWith($movie->url, ['.mp4', '.mkv']))
+            @elseif(Str::endsWith($firstEpisode->url, ['.mp4', '.mkv']))
                 <video id="player"
                     playsinline controls
                     data-poster="{{ asset('storage/'.$movie->poster) }}"
                     class="w-full h-[700px]">
-                    @if(Str::endsWith($movie->url, '.mp4'))
-                        <source src="{{ $movie->url }}" type="video/mp4" />
-                    @elseif(Str::endsWith($movie->url, '.mkv'))
-                        <source src="{{ $movie->url }}" type="video/mkv" />
+                    @if(Str::endsWith($firstEpisode->url, '.mp4'))
+                        <source src="{{ $firstEpisode->url }}" type="video/mp4" />
+                    @elseif(Str::endsWith($firstEpisode->url, '.mkv'))
+                        <source src="{{ $firstEpisode->url }}" type="video/mkv" />
                     @endif
                 </video>
             @endif
         @endif
     </section>
+    {{-- detail --}}
     <section class="flex gap-2">
         <section class="w-1/6">
             <a href="javascript:;" class="w-[150px] cursor-pointer md:w-[calc(25%-15px)] lg:w-[calc(20%-16px)] shrink-0">
@@ -88,6 +91,22 @@
                 <p class="mb-5 text-lg font-normal leading-normal overflow-y-auto h-32">{{ $movie->synopsis }}</p>
             </article>
         </section>
+    </section>
+    {{-- season --}}
+    <section>
+        @foreach ($episodesBySeason as $seasonNumber => $episodes)
+            <p>{{ __('Temporada') }} {{ $seasonNumber }}</p>
+            <ul>
+                @foreach ($episodes as $episode)
+                    <li>
+                        <a href="{{ route('episode', $episode) }}">
+                            Episodio {{ $episode->episode_number }}: {{ $episode->title }}
+                        </a>
+                        <p>{{ $episode->description }}</p>
+                    </li>
+                @endforeach
+            </ul>
+        @endforeach
     </section>
 </section>
 <script>
