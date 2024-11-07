@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backoffice\GenreController;
 use App\Http\Controllers\Backoffice\MovieController;
 use App\Http\Controllers\Backoffice\UserController;
+use App\Http\Controllers\EpisodeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -13,8 +14,8 @@ Route::get('/episode/{episode}', [HomeController::class, 'episode'])->name('epis
 Route::get('/search', [HomeController::class, 'search'])->name('search');
 
 // Eliminar una vez actualizado la base de datos
-Route::get('/updatemovie', [HomeController::class, 'updatemovie'])->name('updatemovie');
-Route::get('/updateserie', [HomeController::class, 'updateserie'])->name('updateserie');
+/*Route::get('/updatemovie', [HomeController::class, 'updatemovie'])->name('updatemovie');
+Route::get('/updateserie', [HomeController::class, 'updateserie'])->name('updateserie');*/
 
 Route::get('/perfil', function () {
     return view('dashboard');
@@ -34,6 +35,15 @@ Route::middleware('auth')->group(function () {
         'edit' => 'movie.edit',
         'update' => 'movie.update',
         'destroy' => 'movie.destroy',
+    ]);
+    Route::resource('backoffice/episodes', EpisodeController::class)->names([
+        'index' => 'episode.index',
+        'create' => 'episode.create',
+        'store' => 'episode.store',
+        'show' => 'episode.show',
+        'edit' => 'episode.edit',
+        'update' => 'episode.update',
+        'destroy' => 'episode.destroy',
     ]);
     Route::resource('backoffice/genres', GenreController::class)->names([
         'index' => 'genre.index',

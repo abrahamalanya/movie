@@ -39,6 +39,7 @@
                     <tr>
                         <th>{{ __('Película') }}</th>
                         <th>{{ __('Publicación') }}</th>
+                        <th>{{ __('Tipo') }}</th>
                         <th>{{ __('Opciones') }}</th>
                     </tr>
                 </x-slot>
@@ -55,8 +56,18 @@
                             </td>
                             <td>{{ Carbon\Carbon::parse($item->release_date)->format('Y') }}</td>
                             <td>
+                                @if ($item->type === 1)
+                                    {{ __('Película') }}
+                                @elseif($item->type === 2)
+                                    {{ __('Serie') }}
+                                @endif
+                            </td>
+                            <td>
                                 <div class="flex gap-2 items-center">
                                     <x-backoffice.link :href="route('movie.edit', $item)" class="text-white" :value="__('messages.edit')" />
+                                    @if ($item->type === 2)
+                                        <x-backoffice.link :href="route('episode.show', $item)" class="text-white hover:text-green-500" :value="__('messages.episodes')" />
+                                    @endif
                                     <x-backoffice.link 
                                         class="text-white hover:text-rose-500"
                                         :value="__('messages.delete')"

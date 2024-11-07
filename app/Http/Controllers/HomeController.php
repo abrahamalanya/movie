@@ -74,7 +74,7 @@ class HomeController extends Controller
     }
 
     // Eliminar una vez actualizado la base de datos
-    public function updatemovie()
+    /*public function updatemovie()
     {
         $moviesOld = DB::table('cine_pelicula')->get();
         foreach ($moviesOld as $value) {
@@ -153,5 +153,5 @@ class HomeController extends Controller
         }
         DB::table('cine_pelicula')->truncate();
         dd('Update episodes perfect');
-    }
+    }*/
 }

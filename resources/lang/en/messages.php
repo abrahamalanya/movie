@@ -19,4 +19,5 @@ return [
     'add' => 'Add',
     'delete' => 'Delete',
     'edit' => 'Edit',
+    'episodes' => 'Episodes',
 ];

@@ -95,17 +95,33 @@
     {{-- season --}}
     <section>
         @foreach ($episodesBySeason as $seasonNumber => $episodes)
-            <p>{{ __('Temporada') }} {{ $seasonNumber }}</p>
-            <ul>
-                @foreach ($episodes as $episode)
-                    <li>
-                        <a href="{{ route('episode', $episode) }}">
-                            Episodio {{ $episode->episode_number }}: {{ $episode->title }}
-                        </a>
-                        <p>{{ $episode->description }}</p>
-                    </li>
-                @endforeach
-            </ul>
+            <article class=""
+                x-data="{ open: false }">
+                <h4 class="font-bold text-xl py-2 flex items-center gap-2 hover:text-cyan-500 hover:cursor-pointer"
+                    @click="open = !open">
+                    <span>{{ __('Temporada') }} {{ $seasonNumber }}</span>
+                    <svg class="w-6 h-6 transform transition-transform"
+                        :class="{ 'rotate-180': open }"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </h4>
+                <ul x-show="open">
+                    @foreach ($episodes as $episode)
+                        <li class="py-1 hover:text-cyan-500">
+                            <a class="text-base font-semibold flex items-center gap-3 "
+                            href="{{ route('episode', $episode) }}">
+                                <i class="fa-solid fa-circle-play"></i>
+                                <span>{{ __('Episodio') }} {{ $episode->episode_number }}: {{ $episode->title }}</span>
+                            </a>
+                            {{-- <p class=" text-sm text-cyan-50">{{ $episode->description }}</p> --}}
+                        </li>
+                    @endforeach
+                </ul>
+            </article>
         @endforeach
     </section>
 </section>

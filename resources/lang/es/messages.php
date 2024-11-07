@@ -19,4 +19,5 @@ return [
     'add' => 'Agregar',
     'delete' => 'Eliminar',
     'edit' => 'Editar',
+    'episodes' => 'Episodios',
 ];
