@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backoffice;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MovieRequest;
 use App\Http\Requests\MovieUpdateRequest;
-use App\Models\Episode;
 use App\Models\Genre;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Storage;
@@ -20,6 +19,7 @@ class MovieController extends Controller
         // Obtener los parámetros de búsqueda
         $title = request()->query('search_title');
         $release = request()->query('search_release');
+        $type = request()->query('search_type');
 
         // Consulta base de Movie
         $query = Movie::query();
@@ -32,6 +32,11 @@ class MovieController extends Controller
         // Filtrar por fecha de publicacion
         if ($release) {
             $query->whereYear('release_date', $release);
+        }
+
+        // Filtrar por tipo
+        if ($type) {
+            $query->where('type', $type);
         }
 
         // Obtener los resultados con paginación
@@ -85,7 +90,7 @@ class MovieController extends Controller
             'trailer' => request('trailer'),
             'release_date' => $release_date,
             'poster' => $path,
-            'type' => 1,
+            'type' => request('type'),
             'genres_json' => json_encode($genreJson),
         ]);
 

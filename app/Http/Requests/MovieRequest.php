@@ -22,6 +22,7 @@ class MovieRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'type' => 'required',
             'title' => 'required|string|max:255',
             'synopsis' => 'required',
             'url' => 'required',
@@ -40,6 +41,7 @@ class MovieRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'type.required' => 'El "Tipo" es obligatorio.',
             'title.required' => 'El "Título" es obligatorio.',
             'title.string' => 'El "Título" debe ser una cadena de texto.',
             'title.max' => 'El "Título" no puede tener más de 255 caracteres.',
