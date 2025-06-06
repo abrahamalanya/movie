@@ -1,6 +1,12 @@
 @extends('layouts.backoffice')
 
 @section('backoffice')
+    @php
+        $data = collect([
+                ['id' => 1, 'name' => 'PELÍCULAS'],
+                ['id' => 2, 'name' => 'SERIES'],
+            ])->map(fn($item) => (object) $item);
+    @endphp
     <x-backoffice.container class="flex gap-5 flex-col">
         <section class="py-2 flex flex-row justify-between items-center">
             <h2 class="text-2xl font-bold">{{ __('Registrar película') }}</h2>
@@ -11,6 +17,16 @@
             @csrf
             <section class="flex gap-2">
                 <article class="w-1/2">
+                    {{-- Tipo --}}
+                    <div class="mb-4">
+                        <x-ui.label for="type">
+                            {{ __('Tipo') }}
+                        </x-ui.label>
+                        <x-ui.select name="type" id="type" :data="$data" />
+                        @error('type')
+                            <x-ui.input-error>{{ $message }}</x-ui.input-error>
+                        @enderror
+                    </div>
                     {{-- Titulo --}}
                     <div class="mb-4">
                         <x-ui.label for="title">

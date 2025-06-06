@@ -1,6 +1,12 @@
 @extends('layouts.backoffice')
 
 @section('backoffice')
+    @php
+        $data = collect([
+            ['id' => 1, 'name' => 'PELÍCULAS'],
+            ['id' => 2, 'name' => 'SERIES'],
+        ])->map(fn($item) => (object) $item);
+    @endphp
     <x-backoffice.container class="flex flex-col">
         <section class="py-2 flex flex-row justify-between items-center">
             <h2 class="text-2xl font-bold">{{ __('messages.movies') }}</h2>
@@ -25,6 +31,9 @@
                         value="{{ request()->query('search_release') }}"
                         placeholder="Fecha de Publicación"
                         class="w-[max-content]" />
+                    <x-ui.select
+                        name="search_type" id="search_type"
+                        :data="$data" />
                     <x-ui.button type="submit" class="bg-sky-600 hover:bg-sky-800">
                         {{ __('Buscar') }}
                     </x-ui.button>
